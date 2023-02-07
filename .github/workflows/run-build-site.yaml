@@ -11,10 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v2
-      - uses: r-lib/actions/setup-pandoc@v1
+      - uses: r-lib/actions/setup-pandoc@v2
 
       - name: Install packages
-        run: Rscript -e 'install.packages(c("rmarkdown", "knitr"))'
+        run: Rscript -e 'install.packages(c("rmarkdown", "distill", "postcards", "knitr", "fontawesome", "xaringanExtra", "htmltools"))'
 
       - name: Build site
         run: Rscript -e 'rmarkdown::render_site(encoding = 'UTF-8')'
@@ -25,5 +25,5 @@ jobs:
           git config --local user.name "GitHub Actions"
       - name: Commit all changes
         run: |
-          git add -A && git commit -m 'Build site' || echo "No changes to commit"
+          git add -A && git commit -m ':rocket: Build site' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
