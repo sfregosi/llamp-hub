@@ -6,6 +6,10 @@ favicon: docs/images/favicon.ico
 output: 
   distill::distill_article:
     self_contained: true
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    css: static/toc-styles.css
 ---
 
 ```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}

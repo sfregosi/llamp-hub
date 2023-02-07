@@ -9,7 +9,7 @@ output:
     toc: true
     toc_depth: 3
     toc_float: true
-    css: toc-styles.css
+    css: static/toc-styles.css
 ---
 
 ```{r setup, include=FALSE, message=FALSE, warning=FALSE,}
