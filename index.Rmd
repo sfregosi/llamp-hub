@@ -11,13 +11,12 @@ output:
 library(fontawesome)
 ```
 
-
 ### About this site
-This repo is the *new* and *improved* Longline Acoustic Monitoring Project central hub - for code, documentation, and guides to data organization. 
+This repo is Longline Acoustic Monitoring Project Hub - a central location for documentation and guides to data organization.
 
-The web address for this repository is: [github.com/sfregosi/llamp](https://github.com/sfregosi/llamp)
+The web address for this repository is: [sfregosi.github.io/llamp-hub](https://sfregosi.github.io/llamp-hub)
 
-This site needs to remain private (at least for now) so the best way to interact with it is to clone the repository to your local machine, then open the ../llamp/docs/site/index.html. This will open the main page (this one!) in a browser window and all links will work as a sort of local intranet page. 
+This repository and site are public, but a more extensive private [llamp](https://github.com/sfregosi/llamp) contains additional code and analyses. 
 
 #### Site Contents
 [**Summary**](summary.html) - High level summary of work conducted so far
