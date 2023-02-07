@@ -45,7 +45,7 @@ Use one of the two methods below to create a new post-processing issue for the l
 1. Navigate to the [llamp](https://github.com/sfregosi/llamp) repository's [New Issue](https://github.com/sfregosi/llamp/issues/new/choose) page and press the green 'Get Started' button for the **Post-processing template**
 
 
-```{r ss-ghi, echo = FALSE, out.width = '65%', fig.align = 'center', fig.cap = 'Screenshot showing the new issue chooser on GitHub'}
+```{r ss-ghi-pp, echo = FALSE, out.width = '65%', fig.align = 'center', fig.cap = 'Screenshot showing the new issue chooser on GitHub'}
 knitr::include_graphics('images/screenshot_github_post-processing-template.png')
 ```
 
@@ -184,7 +184,7 @@ Use one of the two methods below to create a new post-processing issue for the l
 1. Navigate to the [llamp](https://github.com/sfregosi/llamp) repository's [New Issue](https://github.com/sfregosi/llamp/issues/new/choose) page and press the green 'Get Started' button for the **Analysis template**
 
 
-```{r ss-ghi, echo = FALSE, out.width = '65%', fig.align = 'center', fig.cap = 'Screenshot showing the new issue chooser on GitHub'}
+```{r ss-ghi-a, echo = FALSE, out.width = '65%', fig.align = 'center', fig.cap = 'Screenshot showing the new issue chooser on GitHub'}
 knitr::include_graphics('images/screenshot_github_post-processing-template.png')
 ```
 
