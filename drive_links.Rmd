@@ -1,0 +1,66 @@
+---
+title: "Google Drive Links"
+description: |
+  A slightly more organized way to get to various docs saved in Google Drive
+favicon: docs/images/favicon.ico
+output: 
+  distill::distill_article:
+    self_contained: true
+    toc: true
+    toc_float: true
+---
+
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
+library(fontawesome)
+```
+
+`r fa(name = "calendar-check")` *Last Update:
+`r format(Sys.Date(), "%d %b %Y")`*
+
+Put a bunch of Google Drive Links here. As a map or more organized or something?
+
+Most (all?) of these live in the [**LLHARP Master**](https://drive.google.com/drive/u/0/folders/0BxY-_FjiYpOqRVNYbi1iTFBPSkk?resourcekey=0-vquRfPYWfEjmdNjWsjB7jQ) Google Drive folder. 
+
+### Metadata and tracking documents
+
+[**Project Management**](https://docs.google.com/document/d/1ReMTYiU1ZlUmcYkOsV70ii5NW79abwt_II2aUSclZeE/edit#heading=h.arpv8eucrye4) Google Doc
+
+[**LLHARP Data Summary**](https://docs.google.com/spreadsheets/d/1S0e3T8GijoM0NTLCLjKV_9d3C9_YnHNqZhkV0BNJkzg/edit#gid=0): Metadata for every trip including hardware and software versions, data size and records of data uploads, and notes on issues or concerns. This document does not contain any restricted fishery information but it does contain vessel names and trip dates so access is restricted to those it has been shared with through GDrive. 
+
+[**Longline HARP Deployments**](https://docs.google.com/spreadsheets/d/18i4czz6so-GHgFrCRncpLNZxTErdu4yFvi-Z-VwTEdM/edit#gid=1521628320):
+Record of trip numbers, vessels, and captain/owner/observer contact information. This contains vessel names, trip dates, and personal info so it is restricted to only being shared within our group. 
+
+### Vessel recruitment
+
+[**Confirmed Vessel List**](https://docs.google.com/spreadsheets/d/1i1eNu9zobr14yhx8RAXGHmk0pTh6a7s-/edit?rtpof=true#gid=1725502758): This contains vessel names and contact information for owners and captains that have volunteered or have previously taken gear. This contains personal info for the vessels and so has restricted access to only those it has been shared with. 
+
+### Hardware
+
+prep and offload
+
+[**Instructions for Deployment Set-Up and Recovery**](https://docs.google.com/document/d/1EksOga_cyEPW9utMeLDw1ErR-eTIEvCzoO8l2v_Onrg/edit#heading=h.zdtttamxmx79): This is a very thorough protocol document that can be eventually converted to Rmd. Last updated *13 August 2021*
+
+[**LLHARP Part I - Setup, Deploy, Recover.doc**](https://docs.google.com/document/d/0BxY-_FjiYpOqN3lmUHJyZ0JIbzQ/edit?rtpof=true&resourcekey=0-0lrFjbKIafQhui1ttAzwag): Older protocol, last updated *17 March 2017*
+
+[**LLHARP tracker**](https://docs.google.com/spreadsheets/d/1zSNh2WdRVoUmXNn-4hawsKuBqfS51YXKYAjnUFxs6rw/edit#gid=0): Spreadsheet to keep track of gear status (hydrophones, cases, etc). This doc is shared with SIO. 
+
+[**TDR_CRP_usage**](https://docs.google.com/spreadsheets/d/13qwMA_cUG8n1i4OXqbWIJ0Pu58Ho1kx-tPw6Fci7jZ0/edit#gid=1159756902): Spreadsheet to track status of TDRs and record of deployments. 
+
+[**Zoom Recorder Tracker**](https://docs.google.com/spreadsheets/d/1mHXUQGTg27jBXjwE2POs3XdcJykounqL/edit#gid=1787322236): Spreadsheet to track status/location of Zoom recorders. 
+
+### Data processing
+
+[**LLHARP Part II - Data Processing**](https://docs.google.com/document/d/1po1G2isgSCfYWc1dj8XphotPeZuOZ22ugL5wsc9o3JY/edit) Google Doc *9 August 2022*
+
+### Analysis
+
+### Reporting
+
+[**HARP Noise of Interest Captain Feedback Log**](https://docs.google.com/spreadsheets/d/1bGmRu3xXq9RJQZvMprcRzZe-27sX6kv-tclNldokcy8/edit#gid=0): Some notes on ideas of what the noise might be, collected by Colby at Protected Species trainings. 
+
+---
+## Last Updated {.appendix}
+
+`r fa(name = "calendar-check")` `r format(Sys.Date(), "%d %B %Y")`
+
+

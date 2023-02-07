@@ -1,0 +1,51 @@
+name: "."
+title: "Longline Acoustic Monitoring Project Hub"
+description: |
+  A landing page for all things Longline Acoustic Monitoring
+favicon: "images/favicon.ico"
+output_dir: "_site"
+base_url: https://sfregosi.github.io/llamp-hub
+repository_url: https://github.com/sfregosi/llamp-hub
+navbar:
+  logo: 
+    image: "images/favicon.ico"
+    href: https://sfregosi.github.io/llamp-hub
+  search: true
+  right:
+    # - icon: fas fa-adjust
+    - text: "Home"
+      href: index.html
+    - text: "Protocols"
+      menu:
+      - text: "Project overview"
+        href: project_overview.html
+      - text: "Vessel facilitation"
+        href: vessels.html
+      - text: "Hardware"
+        href: hardware.html
+      - text: "Data processing"
+        href: processing.html
+      - text: "Analysis"
+        href: analysis.html
+      - text: "Reporting"
+        href: reporting.html
+ #   - text: "Other"
+ #     menu:
+ #     - text: "Summary"
+ #       href: summary.html
+ #     - text: "Drive Docs"
+ #       href: drive_links.html
+ #     - text: "2022 Manuscript - Data Guide"
+ #       href: simonis_data_guide.html
+ #     - text: "2022 Manuscript - Comparison"
+ #       href: bayless_simonis_comp.html
+    - icon: fab fa-github
+      href: https://github.com/sfregosi/llamp-hub
+theme: static/llamp-theme.css
+output:
+  distill::distill_article:
+    includes:
+      in_header:
+      - _header.html
+      # after_body: 
+      # - _after_body.html

@@ -1,0 +1,87 @@
+---
+title: "Protocol - Hardware"
+description: |
+  All protocols and resources related to hardware live here
+favicon: docs/images/favicon.ico
+output: 
+  distill::distill_article:
+    self_contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    css: toc-styles.css
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE,}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.align = 'center')
+
+library(fontawesome)
+```
+
+### Inventory tracking
+
+[LLHARP Tracker 2.0](https://docs.google.com/spreadsheets/d/1yFXe0Q-HPl6Xwyz5cbyfeEJlM1wSGe0aaEqKY4Ttkbg/edit#gid=0){target="_blank"}  
+
+- Multi-tabbed Google Sheets workbook to inventory for all individual LLHARP parts as well as  [assembled](https://docs.google.com/spreadsheets/d/1yFXe0Q-HPl6Xwyz5cbyfeEJlM1wSGe0aaEqKY4Ttkbg/edit#gid=971828018){target="_blank"} systems that are either ready for deployment or are currently deployed
+- The three main 'swappable' components each have their own tab: [frames](https://docs.google.com/spreadsheets/d/1yFXe0Q-HPl6Xwyz5cbyfeEJlM1wSGe0aaEqKY4Ttkbg/edit#gid=1093290999){target="_blank"}, [dataloggers](https://docs.google.com/spreadsheets/d/1yFXe0Q-HPl6Xwyz5cbyfeEJlM1wSGe0aaEqKY4Ttkbg/edit#gid=1641343003){target="_blank"}, and [hydrophones](https://docs.google.com/spreadsheets/d/1yFXe0Q-HPl6Xwyz5cbyfeEJlM1wSGe0aaEqKY4Ttkbg/edit#gid=2114286337){target="_blank"}
+- Each tab has a Location and a Status column that can be used to indiciate if the part is in house at IRC or is at SIO for repair, and if the part is currently deployed, ready to go, or is awaiting repairs. Additional notes on issues and needed repairs can be made for each part
+
+[TDR_CRP_Usage](https://docs.google.com/spreadsheets/d/13qwMA_cUG8n1i4OXqbWIJ0Pu58Ho1kx-tPw6Fci7jZ0/edit#gid=838073579){target="_blank"}
+- Track status of TDRs. *This is for all of CRP?? ...should this live somewhere else?*
+
+[Zoom Recorder Tracker](https://docs.google.com/spreadsheets/d/1mHXUQGTg27jBXjwE2POs3XdcJykounqL/edit#gid=1787322236){target='_blank'}
+
+[LLHARP tracker](https://docs.google.com/spreadsheets/d/1zSNh2WdRVoUmXNn-4hawsKuBqfS51YXKYAjnUFxs6rw/edit#gid=0){target="_blank"} Google Sheet original version *shared with SIO for keeping track of gear status*
+k
+
+<sub>[Back to top](#)</sub>
+
+--- 
+
+### Setup - before deployment
+
+- Program and assemble LLHARPs
+  - Amazingly thorough (and fun!) [Instructions for Deployment Set-Up and Recovery](https://docs.google.com/document/d/1EksOga_cyEPW9utMeLDw1ErR-eTIEvCzoO8l2v_Onrg/edit#heading=h.zdtttamxmx79){target='_blank'} by Y. Barkley *Last updated 13 August 2021*
+  - Current version of the [LLHARP manual](https://drive.google.com/file/d/1_4VzOnJ2q1x1KuOU7pywEQTapg2CggU6/view?usp=sharing) here.
+- Program and attach TDRs
+  - Fill out [TDR usage sheet](https://docs.google.com/spreadsheets/d/13qwMA_cUG8n1i4OXqbWIJ0Pu58Ho1kx-tPw6Fci7jZ0/edit?usp=sharing) with start time and sampling schedule
+- Fill out deployment check sheet for each instrument assembled
+- Prep in-air recorders (See [In-air Recorder Prep doc](https://docs.google.com/document/d/1W9TZhV9CFsoFE-adrkkeJKhjedkgpcCn/edit){target='_blank'})
+  - Pre-deployment section: new batteries, wipe and install SD cards, tape up safely, pack attaché
+  - Update [Zoom Recorder Tracker](https://docs.google.com/spreadsheets/d/1mHXUQGTg27jBXjwE2POs3XdcJykounqL/edit#gid=1787322236){target='_blank'}
+- Create empty folder on server in  `\\PICQUEENFISH\PSD2\CRP\LLHARP\` for this trip by making a copy of the `LL999 Template - Make a Copy!` folder
+
+### Breakdown - after recovery
+
+- Initial data check
+- TDR stop and offload
+  - Upload data to the the server (`\\PICQUEENFISH\PSD2\CRP\LLHARP\LL0##\`); TDR data files go in the `DL##-TDR##` folder within each of the `FR##_DL##` folders
+  - Fill out [TDR usage sheet](https://docs.google.com/spreadsheets/d/13qwMA_cUG8n1i4OXqbWIJ0Pu58Ho1kx-tPw6Fci7jZ0/edit?usp=sharing) for stop time
+- Copy raw HRP data to server (`\\PICQUEENFISH\PSD2\CRP\LLHARP\LL0##\`); each HRP goes in the `HRP` folder within each of the `FR##_DL##` folders
+- Breakdown in-air recorders (See [In-air Recorder Prep doc](https://docs.google.com/document/d/1W9TZhV9CFsoFE-adrkkeJKhjedkgpcCn/edit){target='_blank'})
+  - Post-deployment section: open up, offload data, update tracking sheets 
+- Scan deployment and recovery check sheets and upload to trip folder on the server, named `LL0## metadata sheets.pdf` 
+- Scan observer datasheets and upload to trip folder on the server, named `LL0##_observer_sheets_scanned.pdf`
+  - The scanner seems to automatically 'enhance' the sheets which makes soe of them unreadable
+  - If the scans are not readable, take photos of the each observer datasheet and place the raw photos in the `Observer Sheet Photos` folder within the main `LLHARP` folder for further processing
+  - *Relevant doc:* [Unreadable bits to check](https://docs.google.com/document/d/1sVldd1YmhxLUiZNoOo3q9FDA7t9SEZVhoDesqevaBFw/edit){target='_blank'}
+
+
+
+### Existing protocol can be found here:
+
+prep and offload
+
+Amazingly thorough (and fun!) [Instructions for Deployment Set-Up and Recovery](https://docs.google.com/document/d/1EksOga_cyEPW9utMeLDw1ErR-eTIEvCzoO8l2v_Onrg/edit#heading=h.zdtttamxmx79) Google Doc by Y. Barkley *13 August 2021*
+
+[LLHARP Part I - Setup, Deploy, Recover.doc](https://docs.google.com/document/d/0BxY-_FjiYpOqN3lmUHJyZ0JIbzQ/edit?rtpof=true&resourcekey=0-0lrFjbKIafQhui1ttAzwag) Google Doc *17 March 2017*
+
+<sub>[Back to top](#)</sub>
+
+
+---
+## Last Updated {.appendix}
+
+`r fa(name = "calendar-check")` `r format(Sys.Date(), "%d %B %Y")`
+

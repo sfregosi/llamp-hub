@@ -1,0 +1,51 @@
+---
+title: "Longline Acoustic Monitoring Project"
+favicon: "images/favicon.ico"
+image: "images/640x427-false-killer-whale.png"
+site: distill::distill_website
+output:
+  postcards::trestles
+---
+
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
+library(fontawesome)
+```
+
+
+### About this site
+This repo is the *new* and *improved* Longline Acoustic Monitoring Project central hub - for code, documentation, and guides to data organization. 
+
+The web address for this repository is: [github.com/sfregosi/llamp](https://github.com/sfregosi/llamp)
+
+This site needs to remain private (at least for now) so the best way to interact with it is to clone the repository to your local machine, then open the ../llamp/docs/site/index.html. This will open the main page (this one!) in a browser window and all links will work as a sort of local intranet page. 
+
+#### Site Contents
+[**Summary**](summary.html) - High level summary of work conducted so far
+
+**Protocols** - Menu to detailed protocols for specific components/steps of the project: vessel recruitment, hardware, data processing, analysis, and reporting. 
+
+[**DriveDocs**](driveLinks.html) - links and descriptions of important docs and sheets on Google Drive. Access to individual links is restricted based on sharing settings. 
+
+**2022 Manuscript** - Menu to a [Data Guide](simonis_data_guide.html) for finding relevant analysis outputs on GDrive and a [Comparison](bayless_simonis_comp.html) doc for comparison of charter results to Bayless et al. 2017
+
+
+
+---
+
+### About the Longline Acoustic Monitoring Project (LLAMP)
+The Longline Acoustic Monitoring Project (recently dubbed LLAMP) is a collaborative project between NOAA NMFS PIFSC and the Hawaiian longline fleet to better understand how and why false killer whales interact with the fishery, and try to reduce these interactions. 
+
+This project has been going on for many years and involves many wonderful people! 
+
+---
+
+#### DISCLAIMER:
+
+<sub>The scientific results and conclusions, as well as any views or opinions expressed herein, are those of the author(s) and do not necessarily reflect the views of NOAA or the Department of Commerce.</sub>
+
+<sub> This repository is a scientific product and is not official communication of the National Oceanic and Atmospheric Administration, or the United States Department of Commerce. All NOAA GitHub project code is provided on an 'as is' basis and the user assumes responsibility for its use. Any claims against the Department of Commerce or Department of Commerce bureaus stemming from the use of this GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DOC or the United States Government.
+</sub>
+
+
+`r fa(name = "calendar-check")` *Last Update: `r format(Sys.Date(), "%d %b %Y")`*
+

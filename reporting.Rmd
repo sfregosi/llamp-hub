@@ -1,0 +1,27 @@
+---
+title: "Protocol - Reporting"
+description: |
+  Details on reporting steps to be completed after analysis
+favicon: docs/images/favicon.ico
+output: 
+  distill::distill_article:
+    self_contained: true
+---
+
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
+library(fontawesome)
+```
+
+This protocol is very much a work in progress `r fa(name = "person-digging")`. For now, all reporting is done manually following a powerpoint template that lives locally on Selene's computer. BUT...she has dreams of automating this with RMD! 
+
+
+Some notes from local word docs:
+
+e.	Plot TDR and spatial data for reporting
+
+---
+## Last Updated {.appendix}
+
+`r fa(name = "calendar-check")` `r format(Sys.Date(), "%d %B %Y")`
+
+
