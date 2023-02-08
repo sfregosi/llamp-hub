@@ -33,10 +33,10 @@ library(htmltools)
 This initial phase of the project developed the recorder technology and worked with a chartered fishing vessel to fine-tune the equipment and monitor several fishing trips with up to five recorders on each fishing set. 
 
 Major outcome:  
-[Bayless et al. 2017](static/Bayless et al_2017_FisheriesResearch_Acoustically monitoring the Hawaii longline fishery for interactions with false killer whales.pdf) which quantifies how often, and during what part of the fishing set interactions happen. 
+[Bayless et al. 2017](static/Bayless et al_2017_FisheriesResearch_Acoustically monitoring the Hawaii longline fishery for interactions with false killer whales.pdf){target='_blank'} which quantifies how often, and during what part of the fishing set interactions happen. 
 
-```{r BaylessTables, fig.cap="Tables 1 and 2 from Bayless et al. 2017"}
-knitr::include_graphics("images/Bayless et al_2017_Tables1and2.png")
+```{r BaylessTables, fig.link = 'images/Bayless et al_2017_Tables1and2.png', fig.cap="Tables 1 and 2 from Bayless et al. 2017"}
+knitr::include_graphics('images/Bayless et al_2017_Tables1and2.png')
 ```
 
 <sub>[Back to top](#)</sub>

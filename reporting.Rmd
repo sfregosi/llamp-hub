@@ -16,12 +16,14 @@ output:
 library(fontawesome)
 ```
 
-This protocol is very much a work in progress `r fa(name = "person-digging")`. For now, all reporting is done manually following a powerpoint template that lives locally on Selene's computer. BUT...she has dreams of automating this with RMD! 
+This protocol is very much a work in progress `r fa(name = "person-digging")`
+
+For now, all reporting is done manually following a powerpoint template that lives locally on Selene's computer. BUT...she has dreams of automating this with RMD! 
 
 
 Some notes from local word docs:
 
-e.	Plot TDR and spatial data for reporting
+- Plot TDR and spatial data for reporting
 
 ---
 ## Last Updated {.appendix}

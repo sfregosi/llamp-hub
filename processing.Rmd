@@ -34,38 +34,15 @@ htmltools::tagList(
 
 #### Create GitHub Issue
 
-Create a new post-processing issue for the latest trip, and add it to the [Longline Acoustic Monitoring GitHub Project](https://github.com/users/sfregosi/projects/3).
+Create a new data processing issue for the latest trip, and add it to the [Longline Acoustic Monitoring GitHub Project](https://github.com/users/sfregosi/projects/3){target='_blank'}.
 
-- Navigate to the [llamp](https://github.com/sfregosi/llamp) repository's [New Issue](https://github.com/sfregosi/llamp/issues/new/choose) page and press the green 'Get Started' button for the **Data processing template**
+- Navigate to the [llamp](https://github.com/sfregosi/llamp){target='_blank'} repository's [New Issue](https://github.com/sfregosi/llamp/issues/new/choose){target='_blank'} page and press the green **Get Started** button for the **Data processing template**
+- Update the issue name to match this trip number, add assignees, and add to the [Longline Acoustic Monitoring Project](https://github.com/users/sfregosi/projects/3){target='_blank'}
 
-```{r ss-github, dpi = 80, fig.cap = 'Screenshot showing the new issue chooser with just the Post-processing template shown. Select the \'Data processing template\''}
-knitr::include_graphics('images/screenshot_github_post-processing-template.png')
+```{r ss-github, dpi = 80, fig.link='images/screenshot_github_analysis-template.png', fig.cap = 'Screenshot showing the new issue chooser with just the Post-processing template shown. Select the \'Data processing template\''}
+knitr::include_graphics('images/screenshot_github_analysis-template.png')
 ```
 
-**Create issue manually using a 'blank' issue:**
-
-2. Copy the below [text](https://github.com/sfregosi/llamp/blob/main/docs/files/post-processing_checklist.txt) into the body of a [new, blank issue](https://github.com/sfregosi/llamp/issues/new) and it will be formatted and ready to go in markdown syntax. **Name the issue 'LL0## - Data Processing'**
-
-```{verbatim}
-**Metadata tasks**
-- [ ] fill in relevant deployment info on [LLHARP Data Summary](https://docs.google.com/spreadsheets/d/1S0e3T8GijoM0NTLCLjKV_9d3C9_YnHNqZhkV0BNJkzg) (e.g., frame and data logger numbers, sd card useage, recovery voltages, TDR info)
-
-**HRP imaging tasks**
-- [ ] run `dd.exe` stuff on SD card to create .hrp file. Initially created on external HD. *This is a several-hours long process*
-- [ ] copy HRP(s) to server. Retain copy of HRP on external hard drive
-
-**HRP processing tasks** (can be done on external hard drive *or* remotely on virtual machine once HRP is uploaded to the server)	
-- [ ] create parameter txt file (and save to server 'HRP' folder)
-- [ ] set up MATLAB paths for correct Triton versions
-- [ ] process HRP into xwavs
-- [ ] create LTSAs of xwavs	
-
-**Data upload tasks**
-- [ ] put copy of HRP on server
-- [ ] save copy of HRP on local physical drive **(and note this somewhere...)**
-- [ ] upload xwavs on server (if created locally, can be removed from local HD once they have been checked)
-- [ ] upload in-air recordings to server
-```
 
 <sub>[Back to top](#)</sub>
 
@@ -101,7 +78,7 @@ Image Longline HARP Data (create .hrp file from SD card).
     ```
 - Note the `HarddiskVolume#` for the SD card. If it is not obvious which one the SD card is, disconnect the card, re-run `--list`, and then reconnect and look for the newly added `Harddisk` and `Partition` 
 
-```{r ss-partitions, dpi = 60, fig.cap = 'Screenshot showing output for listing the partitions'}
+```{r ss-partitions, dpi = 60, fig.link='images/screenshot_imaging-HRP_view-partitions.png', fig.cap = 'Screenshot showing output for listing the partitions'}
 knitr::include_graphics('images/screenshot_imaging-HRP_view-partitions.png')
 ```
 
@@ -122,7 +99,7 @@ knitr::include_graphics('images/screenshot_imaging-HRP_view-partitions.png')
 message in MATLAB and the size of the .hrp file being generated will not necessarily increase while the process is working
   - When processing is finished your screen should look similar to Figure \@ref(fig:ss-img-HRP) below
 
-```{r ss-img-HRP, layout = 'l-body-outset', fig.cap = 'Screenshot showing what the imaging process should look like after running the dd.exe'}
+```{r ss-img-HRP, layout = 'l-body-outset', fig.link = 'images/screenshot_imaging-HRP_run-dd_cropped.png', fig.cap = 'Screenshot showing what the imaging process should look like after running the dd.exe'}
 knitr::include_graphics('images/screenshot_imaging-HRP_run-dd_cropped.png')
 ```
 
@@ -175,7 +152,7 @@ PARAMS.ltsa.ch = 1;       % channel to do ltsa on for multichannel wav files
   - Select the output folder for the XWAVs
   - If there are no errors the MATLAB output will look like:  
 
-```{r ss-process-HRP, dpi = 80, fig.cap = 'Screenshot showing output as it should be if there are no errors while processing the HRP to xwavs'}
+```{r ss-process-HRP, dpi = 80, fig.link = 'images/screenshot_process-HRP-to-xwavs.png', fig.cap = 'Screenshot showing output as it should be if there are no errors while processing the HRP to xwavs'}
 knitr::include_graphics('images/screenshot_process-HRP-to-xwavs.png')
 ```
 
@@ -304,7 +281,6 @@ Example output:
   - If any inputs are the wrong size or format, a warning box will appear and you will be able to re-enter or re-select the appropriate .txt file
 - It will then prompt to again save the parameters and suggest a particular folder within the data folder
   - [ ] In the future, might make sense to save an earlier version of the more simple parameters in a higher level folder (e.g., the decimation factor, etc) and call that for LLHARPs in general, than save specific ones for each trip and frame that has the full paths mapped. Need to look into this more
-- 
   
   
 
@@ -334,8 +310,7 @@ These are all 'greyed' out
 
 # Previous/existing documentation
 
-[LLHARP Part II - Data
-Processing](https://docs.google.com/document/d/1po1G2isgSCfYWc1dj8XphotPeZuOZ22ugL5wsc9o3JY/edit)
+[LLHARP Part II - Data Processing](https://docs.google.com/document/d/1po1G2isgSCfYWc1dj8XphotPeZuOZ22ugL5wsc9o3JY/edit)
 Google Doc *9 August 2022*
 
 

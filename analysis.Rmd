@@ -38,48 +38,13 @@ First there is a set of tasks that are sort of post-processing/pre-analysis - wh
 
 #### Create GitHub issue
 
-Use one of the two methods below to create a new post-processing issue for the latest trip, and add it to the [Longline Acoustic Monitoring GitHub Project](https://github.com/users/sfregosi/projects/3).
+Create a new post-processing issue for the latest trip 
 
-**Create issue from a template:**
+- Navigate to the [llamp](https://github.com/sfregosi/llamp){target='_blank'} repository's [New Issue](https://github.com/sfregosi/llamp/issues/new/choose){target='_blank'} page and press the green **Get Started** button for the **Post-processing template**
+- Update the newly created issue name with the correct trip number, add any assignees, and add to the [Longline Acoustic Monitoring Project](https://github.com/users/sfregosi/projects/3){target='_blank'}
 
-1. Navigate to the [llamp](https://github.com/sfregosi/llamp) repository's [New Issue](https://github.com/sfregosi/llamp/issues/new/choose) page and press the green 'Get Started' button for the **Post-processing template**
-
-
-```{r ss-ghi-pp, echo = FALSE, out.width = '65%', fig.align = 'center', fig.cap = 'Screenshot showing the new issue chooser on GitHub'}
-knitr::include_graphics('images/screenshot_github_post-processing-template.png')
-```
-
-<!-- ![Screenshot showing the new issue chooser](images/screenshot_github_post-processing-template.png) -->
-
-**OR, Create issue manually using a 'blank' issue:**
-
-2. Copy the below [text](https://github.com/sfregosi/llamp/blob/main/docs/files/post-processing_checklist.txt) into the body of a [new, blank issue](https://github.com/sfregosi/llamp/issues/new) and it will be formatted and ready to go in markdown syntax. **Name the issue 'LL0## - Post-processing'**
-
-
-```{verbatim}
-Detailed instructions for all below steps can be found in the [Analysis Protocol](https://github.com/sfregosi/llamp/blob/main/docs/_site/analysis.html)
-
-**Metadata and data checks:**
-- [ ] Add trip to the **phase_3_multi_deployments_summary.xslx** as an entry on the 'DataSummary_UW', 'DataSummary_IA', 'Depredation', and 'ProcessingStatus' tabs 
-- [ ] Create **README_LL0##.txt** in 'LL0##' server folder. Update as working through the below steps
-- [ ] Check datasheets for readability, combine photos if needed, and save as **LL0##\_observer_sheets_photos.pdf**
-- [ ] Transcribe in-air and underwater data sheets to the appropriate tabs in a **LL0##\_summary.xlsx**; use blank template [LL000_Summary_phase3template.xlsx](https://github.com/sfregosi/llamp/blob/main/docs/files/LL000_Summmary_phase3template.xlsx)
-- [ ] Manually review underwater data LTSA to check data quality and report data quality on the 'DataSummary_UW' tab of **phase_3_multi_deployments_summary.xslx**
-- [ ]  During quality check, mark actual recorder in/out times from the acoustic record on 'RecorderTimes' tabs of **LL0##\_summary.xlsx**
-- [ ] Check in-air data quality and report on the 'DataSummary_IA' tab of **phase_3_multi_deployments_summary.xslx**
-
-**Run `workflow_processTrip.m` to complete below steps:**
-- [ ] Convert log .xlsx to .mat (section `(1)`)
-- [ ] Check logged and transcribed location data by plotting using `plotSetDrifts.m` (`workflow_processTrip.m` section `(1)`)
-- [ ] Update **recorderKey.mat** (section `(2)`)
-- [ ] Summarize deployment durations (section `(3)`)
-- [ ] Compare logged times to recorder times in `durTable` and `l` (log).  Note any inconsistencies in the **README**
-- [ ] Split xwavs if needed (section `(4)`)
-
-**After `workflow_processTrip`:**
-- [ ] If xwavs were split, remake 5 sec/100 Hz resolution LTSAs
-- [ ] Make 2s/10 Hz resolution LTSAs for noise analysis
-- [ ] Finalize 'README' and **phase_3_multi_deployments_summary.xslx**
+```{r ss-ghi-pp, echo = FALSE, out.width = '65%', fig.align = 'center', fig.link='images/screenshot_github_analysis-template.png', fig.cap = 'Screenshot showing the new issue template selection page on GitHub'}
+knitr::include_graphics('images/screenshot_github_analysis-template.png')
 ```
 
 ## Detailed data-checking instructions 
@@ -105,7 +70,7 @@ Detailed instructions for all below steps can be found in the [Analysis Protocol
   - Save within the trip's server folder with the filename `LL0##_observer_sheets_photos.pdf`
 - Transcribe underwater and in-air datasheets to .xlsx
   - Use the blank template found on SF's local machine at `C:\Users\Selene.Fregosi\Documents\longline_local\tripExcelSummaries\`
-  `LL000_Summary_phase3_template.xlsx` or in the llamp repository at [LL000_Summary_phase3template.xlsx](https://github.com/sfregosi/llamp/blob/main/docs/files/LL000_Summmary_phase3template.xlsx)
+  `LL000_Summary_phase3_template.xlsx` or in the llamp repository at [LL000_Summary_phase3template.xlsx](https://github.com/sfregosi/llamp/blob/main/docs/files/LL000_Summmary_phase3template.xlsx){target='_blank'}
   - Save the template as `LL0##_Summary.xlsx` within this trip's server folder
   - Fill in observer noted set/haul/recorder deployment times in the **Summary** tab
   - Fill in observer noted in-air recording times and filenames in the **In-air** tab
@@ -177,15 +142,15 @@ After `workflow_processTrip.m`, finalize the created ltsas and summary docs.
 
 #### Create GitHub issue
 
-Use one of the two methods below to create a new post-processing issue for the latest trip, and add it to the [Longline Acoustic Monitoring GitHub Project](https://github.com/users/sfregosi/projects/3).
 
-**Create issue from a template:**
+Create a new issue to add this task to the [Longline Acoustic Monitoring Project](https://github.com/users/sfregosi/projects/3){target='_blank'}
 
-1. Navigate to the [llamp](https://github.com/sfregosi/llamp) repository's [New Issue](https://github.com/sfregosi/llamp/issues/new/choose) page and press the green 'Get Started' button for the **Analysis template**
+- Navigate to the [llamp](https://github.com/sfregosi/llamp) repository's [New Issue](https://github.com/sfregosi/llamp/issues/new/choose){target='_blank'} page and press the green **Get Started** button for the **Analysis template**
+- Update the created issue name with the correct trip number, add any assignees, and add to the [Longline Acoustic Monitoring Project](https://github.com/users/sfregosi/projects/3){target='_blank'}
 
 
-```{r ss-ghi-a, echo = FALSE, out.width = '65%', fig.align = 'center', fig.cap = 'Screenshot showing the new issue chooser on GitHub'}
-knitr::include_graphics('images/screenshot_github_post-processing-template.png')
+```{r ss-ghi-a, echo = FALSE, out.width = '65%', fig.align = 'center', fig.link='images/screenshot_github_analysis-template.png', fig.cap = 'Screenshot showing the new issue template selection page on GitHub'}
+knitr::include_graphics('images/screenshot_github_analysis-template.png')
 ```
 
 ## Odontocetes
