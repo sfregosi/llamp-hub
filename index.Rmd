@@ -11,27 +11,27 @@ output:
 library(fontawesome)
 ```
 
-### About this site
+### About *this site*
 This repo is Longline Acoustic Monitoring Project Hub - a central location for documentation and guides to data organization.
 
-The web address for this repository is: [sfregosi.github.io/llamp-hub](https://sfregosi.github.io/llamp-hub)
+The web address for this repository is: [sfregosi.github.io/llamp-hub](https://sfregosi.github.io/llamp-hub){target='_blank'}
 
-This repository and site are public, but a more extensive private [llamp](https://github.com/sfregosi/llamp) contains additional code and analyses. 
+This repository and site are *public*, but a more extensive *private*  [llamp](https://github.com/sfregosi/llamp) repository contains additional code and analyses. 
 
-#### Site Contents
+##### Site Contents
 [**Summary**](summary.html) - High level summary of work conducted so far
 
-**Protocols** - Menu to detailed protocols for specific components/steps of the project: vessel recruitment, hardware, data processing, analysis, and reporting. 
+**Protocols** - Top left menu to detailed protocols for specific components/steps of the project: vessel recruitment, hardware, data processing, analysis, and reporting. 
 
-[**DriveDocs**](driveLinks.html) - links and descriptions of important docs and sheets on Google Drive. Access to individual links is restricted based on sharing settings. 
+[**Drive docs**](drive-links.html) - links and descriptions of important docs and sheets on Google Drive. Access to individual links is restricted based on Google Drive sharing settings. 
 
-**2022 Manuscript** - Menu to a [Data Guide](simonis_data_guide.html) for finding relevant analysis outputs on GDrive and a [Comparison](bayless_simonis_comp.html) doc for comparison of charter results to Bayless et al. 2017
+<!-- **2022 Manuscript** - Menu to a [Data Guide](simonis_data_guide.html) for finding relevant analysis outputs on GDrive and a [Comparison](bayless_simonis_comp.html) doc for comparison of charter results to Bayless et al. 2017 -->
 
 
 
 ---
 
-### About the Longline Acoustic Monitoring Project (LLAMP)
+### About *this project*
 The Longline Acoustic Monitoring Project (recently dubbed LLAMP) is a collaborative project between NOAA NMFS PIFSC and the Hawaiian longline fleet to better understand how and why false killer whales interact with the fishery, and try to reduce these interactions. 
 
 This project has been going on for many years and involves many wonderful people! 

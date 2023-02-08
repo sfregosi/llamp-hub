@@ -28,7 +28,7 @@ library(fontawesome)
 - Each tab has a Location and a Status column that can be used to indiciate if the part is in house at IRC or is at SIO for repair, and if the part is currently deployed, ready to go, or is awaiting repairs. Additional notes on issues and needed repairs can be made for each part
 
 [TDR_CRP_Usage](https://docs.google.com/spreadsheets/d/13qwMA_cUG8n1i4OXqbWIJ0Pu58Ho1kx-tPw6Fci7jZ0/edit#gid=838073579){target="_blank"}
-- Track status of TDRs. *This is for all of CRP?? ...should this live somewhere else?*
+- Track status of TDRs. *This is for all of CRP. Ok to continue to live here!*
 
 [Zoom Recorder Tracker](https://docs.google.com/spreadsheets/d/1mHXUQGTg27jBXjwE2POs3XdcJykounqL/edit#gid=1787322236){target='_blank'}
 

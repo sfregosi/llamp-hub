@@ -17,8 +17,8 @@ navbar:
       href: index.html
     - text: "Protocols"
       menu:
-      - text: "Project overview"
-        href: project_overview.html
+#      - text: "Project overview"
+#        href: project_overview.html
       - text: "Vessel facilitation"
         href: vessels.html
       - text: "Hardware"
@@ -29,12 +29,12 @@ navbar:
         href: analysis.html
       - text: "Reporting"
         href: reporting.html
- #   - text: "Other"
- #     menu:
- #     - text: "Summary"
- #       href: summary.html
- #     - text: "Drive Docs"
- #       href: drive_links.html
+    - text: "Other"
+      menu:
+      - text: "Summary"
+        href: summary.html
+      - text: "Drive docs"
+        href: drive-links.html
  #     - text: "2022 Manuscript - Data Guide"
  #       href: simonis_data_guide.html
  #     - text: "2022 Manuscript - Comparison"

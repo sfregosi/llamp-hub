@@ -118,21 +118,30 @@ d-appendix {
   --bkgd-color:         var(--color-primary);
 }
 
+.distill-site-header a {
+  font-weight:          lighter;
+}
+
 .distill-site-header a:hover {
   color:                var(--dark-grey);
+  font-weight:          lighter;
+  border-bottom:        0px;
 }
 
 .nav-dropdown .nav-dropbtn {
   color:                var(--text-color);
+  font-weight:          lighter;
 }
 
 .distill-site-header .nav-dropdown:hover .nav-dropbtn {
   color:                var(--code-grey);
+  font-weight:          lighter;
 }
 
 .nav-dropdown-content a:hover {
   color:                var(--hover-color, white);
   background-color:     var(--color-secondary);
+  font-weight:          lighter;
 }
 
 
@@ -216,68 +225,82 @@ table, td, tr, th {
 }
 
 d-article table th, d-article table td {
-  font-size:          15px;
-  padding:            2px 8px;
-  border:             1px solid gainsboro;
+  font-size:            15px;
+  padding:              2px 8px;
+  border:               1px solid gainsboro;
 }
 
 /* ----------- LINK STYLING ----------- */
 d-article a {
-  border-bottom: 0px;
-  text-decoration: none;
-  color: #047C91;
-  font-weight: bold;
+  border-bottom:        0px;
+  text-decoration:      none;
+  color:                #047C91;
+  font-weight:          bold;
 }
+
+a {
+  border-bottom:        0px;
+  text-decoration:      none;
+  color:                #047C91;
+  font-weight:          bold;
+}
+
+a:hover {
+  border-bottom:        1px solid rgba(0, 0, 0, 0.8);
+  color:                var(--dark-grey);
+  text-decoration:      none;
+}
+
 
 /* -------- CODE STYLING ----------- */
 
 d-article code {
-  font-family:      Roboto Mono;
-  background-color: #EBEBEB;
-  color:            black;
-  border-radius:    3px;
+  font-family:          Roboto Mono;
+  background-color:     #EBEBEB;
+  color:                black;
+  border-radius:        3px;
 }
 
 /* making code chunks with scroll bar */
 d-article pre { 
-  border-radius:    3px; /* rounded chunk window*/
-  font-size:        14px; /* output text size */
-  color:            black; /* output text colour */
-  background-color: #EBEBEB; /* output chunk background colour */
-  padding:          5px 5px 5px 18px; /* top,right,bottom,left padding values */
-  overflow:         auto !important; /* enables scroll bar */
-  max-height:       200px;
-  margin-top:       1.0rem;
+  border-radius:        3px; /* rounded chunk window*/
+  font-size:            14px; /* output text size */
+  color:                black; /* output text colour */
+  background-color:     #EBEBEB; /* output chunk background colour */
+  padding:              5px 5px 5px 18px; /* top,right,bottom,left padding values */
+  overflow:             auto !important; /* enables scroll bar */
+  max-height:           200px;
+  margin-top:           1.0rem;
 }
 
 d-article div.sourceCode pre { 
-  border-radius:    3px;
-  font-size:        14px; /* output text size */
-  color:            black;
-  background-color: #EBEBEB;
-  padding:          5px 5px 5px 18px;
-  overflow:         auto !important;
-  max-height:       200px;
+  border-radius:        3px;
+  font-size:            14px; /* output text size */
+  color:                black;
+  background-color:     #EBEBEB;
+  padding:              5px 5px 5px 18px;
+  overflow:             auto !important;
+  max-height:           200px;
 }
 
 
 /* -------- LIST STYLING -------- */
 /* Smaller spacing in bullet lists */
 d-article li {
-  margin-bottom:    0px;
+  margin-bottom:        0px;
 }
 /* no bottom margin on nested lists */
 d-article ul ul {
-  margin-bottom:    0px;
+  margin-bottom:        0px;
 }
 d-article ul ul ul {
-  margin-bottom:    0px;
+  margin-bottom:        0px;
 }
 
 
 
 figure {
-    position: relative;
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
+    position:           relative;
+    margin-bottom:      1.5em;
+    margin-top:         1.5em;
 }
