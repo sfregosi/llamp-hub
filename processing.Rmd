@@ -103,7 +103,7 @@ message in MATLAB and the size of the .hrp file being generated will not necessa
 knitr::include_graphics('images/screenshot_imaging-HRP_run-dd_cropped.png')
 ```
 
-
+- Copy raw HRP data to server (`\\PICQUEENFISH\PSD2\CRP\LLHARP\LL0##\`); each HRP goes in the `HRP` folder within each of the `FR##_DL##` folders
 <sub>[Back to top](#)</sub>
 
 ## Process HRP - 2020 processing code
