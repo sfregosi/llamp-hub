@@ -41,11 +41,14 @@ k
 
 ### Setup - before deployment
 
+If not done already, create a [New Issue](https://github.com/sfregosi/llamp/issues/new/choose){target='_blank'} using the **Hardware Setup template**
+
 - Program and assemble LLHARPs
   - Amazingly thorough (and fun!) [Instructions for Deployment Set-Up and Recovery](https://docs.google.com/document/d/1EksOga_cyEPW9utMeLDw1ErR-eTIEvCzoO8l2v_Onrg/edit#heading=h.zdtttamxmx79){target='_blank'} by Y. Barkley *Last updated 13 August 2021*
-  - Current version of the [LLHARP manual](https://drive.google.com/file/d/1_4VzOnJ2q1x1KuOU7pywEQTapg2CggU6/view?usp=sharing) here.
+  - Current version of the [LLHARP manual](https://drive.google.com/file/d/1_4VzOnJ2q1x1KuOU7pywEQTapg2CggU6/view?usp=sharing){target="_blank"} here
+  - Note any configuration changes in the [LLHARP Tracker 2.0](https://docs.google.com/spreadsheets/d/1yFXe0Q-HPl6Xwyz5cbyfeEJlM1wSGe0aaEqKY4Ttkbg/edit#gid=0){target="_blank"}  
 - Program and attach TDRs
-  - Fill out [TDR usage sheet](https://docs.google.com/spreadsheets/d/13qwMA_cUG8n1i4OXqbWIJ0Pu58Ho1kx-tPw6Fci7jZ0/edit?usp=sharing) with start time and sampling schedule
+  - Fill out [TDR usage sheet](https://docs.google.com/spreadsheets/d/13qwMA_cUG8n1i4OXqbWIJ0Pu58Ho1kx-tPw6Fci7jZ0/edit?usp=sharing){target="_blank"} with start time and sampling schedule
 - Fill out deployment check sheet for each instrument assembled
 - Prep in-air recorders (See [In-air Recorder Prep doc](https://docs.google.com/document/d/1W9TZhV9CFsoFE-adrkkeJKhjedkgpcCn/edit){target='_blank'})
   - Pre-deployment section: new batteries, wipe and install SD cards, tape up safely, pack attaché
@@ -54,16 +57,23 @@ k
 
 ### Breakdown - after recovery
 
+If not done already, create a [New Issue](https://github.com/sfregosi/llamp/issues/new/choose){target='_blank'} using the **Hardware Breakdown template**
+
 - Initial data check
 - TDR stop and offload
   - Upload data to the the server (`\\PICQUEENFISH\PSD2\CRP\LLHARP\LL0##\`); TDR data files go in the `DL##-TDR##` folder within each of the `FR##_DL##` folders
   - Fill out [TDR usage sheet](https://docs.google.com/spreadsheets/d/13qwMA_cUG8n1i4OXqbWIJ0Pu58Ho1kx-tPw6Fci7jZ0/edit?usp=sharing) for stop time
-- Copy raw HRP data to server (`\\PICQUEENFISH\PSD2\CRP\LLHARP\LL0##\`); each HRP goes in the `HRP` folder within each of the `FR##_DL##` folders
+- Breakdown LLHARPs
+  - Open up and extract SD cards and hand off to data processor
+  - Update [LLHARP Data Summary](https://docs.google.com/spreadsheets/d/1S0e3T8GijoM0NTLCLjKV_9d3C9_YnHNqZhkV0BNJkzg/edit#gid=0){target="_blank"} with power down date and voltages
+  - Update [LLHARP Tracker 2.0](https://docs.google.com/spreadsheets/d/1yFXe0Q-HPl6Xwyz5cbyfeEJlM1wSGe0aaEqKY4Ttkbg/edit#gid=0){target="_blank"} with any noted issues with any components
 - Breakdown in-air recorders (See [In-air Recorder Prep doc](https://docs.google.com/document/d/1W9TZhV9CFsoFE-adrkkeJKhjedkgpcCn/edit){target='_blank'})
-  - Post-deployment section: open up, offload data, update tracking sheets 
+  - Open up and extract SD cards and remove batteries
+  - Either hand off SD cards to data processor or upload to server (`\\PICQUEENFISH\PSD2\CRP\LLHARP\LL0##\InAirRecorder\`); Zoom data files are each placed within a `Z0#` folder
+  - Update [Zoom Recorder Tracker](https://docs.google.com/spreadsheets/d/1mHXUQGTg27jBXjwE2POs3XdcJykounqL/edit#gid=1787322236){target='_blank'}
 - Scan deployment and recovery check sheets and upload to trip folder on the server, named `LL0## metadata sheets.pdf` 
 - Scan observer datasheets and upload to trip folder on the server, named `LL0##_observer_sheets_scanned.pdf`
-  - The scanner seems to automatically 'enhance' the sheets which makes soe of them unreadable
+  - The scanner seems to automatically 'enhance' the sheets which makes some of them unreadable
   - If the scans are not readable, take photos of the each observer datasheet and place the raw photos in the `Observer Sheet Photos` folder within the main `LLHARP` folder for further processing
   - *Relevant doc:* [Unreadable bits to check](https://docs.google.com/document/d/1sVldd1YmhxLUiZNoOo3q9FDA7t9SEZVhoDesqevaBFw/edit){target='_blank'}
 
