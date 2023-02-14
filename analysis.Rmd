@@ -70,7 +70,7 @@ knitr::include_graphics('images/screenshot_github_analysis-template.png')
   - Save within the trip's server folder with the filename `LL0##_observer_sheets_photos.pdf`
 - Transcribe underwater and in-air datasheets to .xlsx
   - Use the blank template found on SF's local machine at `C:\Users\Selene.Fregosi\Documents\longline_local\tripExcelSummaries\`
-  `LL000_Summary_phase3_template.xlsx` or in the llamp repository at [LL000_Summary_phase3template.xlsx](https://github.com/sfregosi/llamp/blob/main/docs/files/LL000_Summmary_phase3template.xlsx){target='_blank'}
+  `LL000_Summary_phase3_template.xlsx` or in the llamp repository at [LL000_Summary_phase3template.xlsx](https://github.com/sfregosi/llamp/blob/main/files/LL000_Summmary_phase3template.xlsx){target='_blank'}
   - Save the template as `LL0##_Summary.xlsx` within this trip's server folder
   - Fill in observer noted set/haul/recorder deployment times in the **Summary** tab
   - Fill in observer noted in-air recording times and filenames in the **In-air** tab
@@ -132,7 +132,8 @@ After `workflow_processTrip.m`, finalize the created ltsas and summary docs.
 - Make a finer resolution LTSA for noise analysis
   - Use a 2 sec/10 Hz resolution
   - Name the file `LL0##_FR##_DL##_2s_10Hz.ltsa` and save within the xwavs folder
-- Finalize the **README** and `phase_3_multi_deployments_summary.xslx` by ensuring all inconsitencies are noted, and data checks completed, and all processing steps are done
+- Finalize the **README** and `phase_3_multi_deployments_summary.xslx` by ensuring all inconsistencies are noted, and data checks completed, and all processing steps are done
+- Run `workflow_database_pullVesselIDs.R` key for working with LOTUS database (limited to those with signed NDA/LOTUS access)
 
 <sub>[Back to top](#)</sub>
 
