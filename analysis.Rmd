@@ -156,12 +156,18 @@ knitr::include_graphics('images/screenshot_github_analysis-template.png')
 
 ## Odontocetes
 
-- Manually scan LTSAs to define start/end time of odontocete acoustic events 
-  - in Triton
-  - note potential species ID as possible
-  - Either omit or separately log sperm whale events 
+- Manually scan LTSAs to mark start/stop time of odontocete acoustic events 
+  - Use Triton to scan full deployment. Latest version: [MarineBioAcousticsRC/Triton](https://github.com/MarineBioAcousticsRC/Triton)
+  - Manual picks can be made using Triton Logger, or just manually noted in a table
+  - Create a new table/log for each recorder in a given trip (e.g., `log_LL060_FR38_DL65.xls`)
+  - Note potential species ID as possible; while our focus is fkw, any notes about potential species are useful for any future work
+  - Clean up and collapse final events into a .csv 
+    - Save .csv with naming convention `LL0##_FR##_DL##_encounterTimes.csv`
+    - Must include columns 'start', 'stop', 'sp', and 'id' 
+    - `id` column should be manually added and include the trip string and just a sequential account of events (e.g., L064_FR52_DL59_1, L064_FR52_DL59_2...)
 - Run Pamguard detector suite - click, whistle, burst pulse
-  - use `PAM2016_LLHARP_BANTER.psfx` 
+  - Use `pam20207b_llharp_banter.psfx` [download here](https://github.com/sfregosi/llamp/blob/main/pamguard/settings/pam20207b_llharp_banter.psfx)
+  - Detail on how this preferences file was built can be found in the [glider-MHI repo](https://github.com/sfregosi/glider-MHI/blob/main/docs/_site/pg_settings.html) or talk to JLKM for more info! 
   - *For speed, the detectors can be run only over files with known odontocete events by hand selecting just the files of interest*
 - Extract features of click, whistle, and burst pulse detections in `PAMpal` 
   - List the code here...
