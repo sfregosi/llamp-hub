@@ -2886,15 +2886,23 @@ Figure 2: Screenshot showing the new issue template selection page on GitHub
 </div>
 <h2 id="odontocetes">Odontocetes</h2>
 <ul>
-<li>Manually scan LTSAs to define start/end time of odontocete acoustic events
+<li>Manually scan LTSAs to mark start/stop time of odontocete acoustic events
 <ul>
-<li>in Triton</li>
-<li>note potential species ID as possible</li>
-<li>Either omit or separately log sperm whale events</li>
+<li>Use Triton to scan full deployment. Latest version: <a href="https://github.com/MarineBioAcousticsRC/Triton">MarineBioAcousticsRC/Triton</a></li>
+<li>Manual picks can be made using Triton Logger, or just manually noted in a table</li>
+<li>Create a new table/log for each recorder in a given trip (e.g., <code>log_LL060_FR38_DL65.xls</code>)</li>
+<li>Note potential species ID as possible; while our focus is fkw, any notes about potential species are useful for any future work</li>
+<li>Clean up and collapse final events into a .csv
+<ul>
+<li>Save .csv with naming convention <code>LL0##_FR##_DL##_encounterTimes.csv</code></li>
+<li>Must include columns ‘start’, ‘stop’, ‘sp’, and ‘id’</li>
+<li><code>id</code> column should be manually added and include the trip string and just a sequential account of events (e.g., L064_FR52_DL59_1, L064_FR52_DL59_2…)</li>
+</ul></li>
 </ul></li>
 <li>Run Pamguard detector suite - click, whistle, burst pulse
 <ul>
-<li>use <code>PAM2016_LLHARP_BANTER.psfx</code></li>
+<li>Use <code>pam20207b_llharp_banter.psfx</code> <a href="https://github.com/sfregosi/llamp/blob/main/pamguard/settings/pam20207b_llharp_banter.psfx">download here</a></li>
+<li>Detail on how this preferences file was built can be found in the <a href="https://github.com/sfregosi/glider-MHI/blob/main/docs/_site/pg_settings.html">glider-MHI repo</a> or talk to JLKM for more info!</li>
 <li><em>For speed, the detectors can be run only over files with known odontocete events by hand selecting just the files of interest</em></li>
 </ul></li>
 <li>Extract features of click, whistle, and burst pulse detections in <code>PAMpal</code>
@@ -2925,7 +2933,7 @@ Figure 2: Screenshot showing the new issue template selection page on GitHub
 - This is the approach used in Bayless et al. 2017</p>
 <p><sub><a href="#">Back to top</a></sub></p>
 <h2 class="appendix" id="last-updated">Last updated</h2>
-<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M216.1 408.1C207.6 418.3 192.4 418.3 183 408.1L119 344.1C109.7 335.6 109.7 320.4 119 311C128.4 301.7 143.6 301.7 152.1 311L200 358.1L295 263C304.4 253.7 319.6 253.7 328.1 263C338.3 272.4 338.3 287.6 328.1 296.1L216.1 408.1zM128 0C141.3 0 152 10.75 152 24V64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0zM400 192H48V448C48 456.8 55.16 464 64 464H384C392.8 464 400 456.8 400 448V192z"/></svg> 15 February 2023</p>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M216.1 408.1C207.6 418.3 192.4 418.3 183 408.1L119 344.1C109.7 335.6 109.7 320.4 119 311C128.4 301.7 143.6 301.7 152.1 311L200 358.1L295 263C304.4 253.7 319.6 253.7 328.1 263C338.3 272.4 338.3 287.6 328.1 296.1L216.1 408.1zM128 0C141.3 0 152 10.75 152 24V64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0zM400 192H48V448C48 456.8 55.16 464 64 464H384C392.8 464 400 456.8 400 448V192z"/></svg> 21 February 2023</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
