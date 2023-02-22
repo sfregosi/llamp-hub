@@ -43,6 +43,10 @@ Record of trip numbers, vessels, and captain/owner/observer contact information.
 
 [Zoom Recorder Tracker](https://docs.google.com/spreadsheets/d/1mHXUQGTg27jBXjwE2POs3XdcJykounqL/edit#gid=1787322236){target='_blank'}: Spreadsheet to track status/location of Zoom recorders. 
 
+[Longline HARP User Manual](https://drive.google.com/drive/u/0/folders/1khqpzKseolLlXRJ8Yf2aep9uQOuhWYdD){target='_blank'} *April 2021*
+
+[Blank metadata check sheet](https://drive.google.com/drive/u/0/folders/1khqpzKseolLlXRJ8Yf2aep9uQOuhWYdD){target='_blank'}
+
 [**Instructions for Deployment Set-Up and Recovery**](https://docs.google.com/document/d/1EksOga_cyEPW9utMeLDw1ErR-eTIEvCzoO8l2v_Onrg/edit#heading=h.zdtttamxmx79){target='_blank'}: This is a very thorough protocol document that can be eventually converted to Rmd. Last updated *13 August 2021*
 
 *old protocol* [**LLHARP Part I - Setup, Deploy, Recover.doc**](https://docs.google.com/document/d/0BxY-_FjiYpOqN3lmUHJyZ0JIbzQ/edit?rtpof=true&resourcekey=0-0lrFjbKIafQhui1ttAzwag){target='_blank'}: Older protocol, last updated *17 March 2017*

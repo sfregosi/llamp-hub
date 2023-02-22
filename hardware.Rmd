@@ -45,11 +45,11 @@ If not done already, create a [New Issue](https://github.com/sfregosi/llamp/issu
 
 - Program and assemble LLHARPs
   - Amazingly thorough (and fun!) [Instructions for Deployment Set-Up and Recovery](https://docs.google.com/document/d/1EksOga_cyEPW9utMeLDw1ErR-eTIEvCzoO8l2v_Onrg/edit#heading=h.zdtttamxmx79){target='_blank'} by Y. Barkley *Last updated 13 August 2021*
-  - Current version of the [LLHARP manual](https://drive.google.com/file/d/1_4VzOnJ2q1x1KuOU7pywEQTapg2CggU6/view?usp=sharing){target="_blank"} here
+  - Current version of the [Longline HARP User Manual](https://drive.google.com/file/d/1_4VzOnJ2q1x1KuOU7pywEQTapg2CggU6/view?usp=sharing){target="_blank"} here
   - Note any configuration changes in the [LLHARP Tracker 2.0](https://docs.google.com/spreadsheets/d/1yFXe0Q-HPl6Xwyz5cbyfeEJlM1wSGe0aaEqKY4Ttkbg/edit#gid=0){target="_blank"}  
 - Program and attach TDRs
   - Fill out [TDR usage sheet](https://docs.google.com/spreadsheets/d/13qwMA_cUG8n1i4OXqbWIJ0Pu58Ho1kx-tPw6Fci7jZ0/edit?usp=sharing){target="_blank"} with start time and sampling schedule
-- Fill out deployment check sheet for each instrument assembled
+- Fill out deployment check sheet for each instrument assembled ([blank metadata check sheet](https://drive.google.com/drive/u/0/folders/1khqpzKseolLlXRJ8Yf2aep9uQOuhWYdD){target='_blank'})
 - Prep in-air recorders (See [In-air Recorder Prep doc](https://docs.google.com/document/d/1W9TZhV9CFsoFE-adrkkeJKhjedkgpcCn/edit){target='_blank'})
   - Pre-deployment section: new batteries, wipe and install SD cards, tape up safely, pack attaché
   - Update [Zoom Recorder Tracker](https://docs.google.com/spreadsheets/d/1mHXUQGTg27jBXjwE2POs3XdcJykounqL/edit#gid=1787322236){target='_blank'}
