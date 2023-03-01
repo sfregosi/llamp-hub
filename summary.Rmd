@@ -62,6 +62,9 @@ A manuscript is currently in prep by Simonis et al. that expands on Bayless et a
 
 This most recent phase of the project was launched in early 2021 and renewed efforts to deploy multiple recorders across the gear within a single fishing set. We continue to work with volunteer vessels to take out up to four recorders on trips where they have observer coverage. We are working to better understand what exactly is generating the specific noise of interest identified in Phase II, and potential mitigation methods. This effort includes two new aspects: (1) working with collaborators at Scripps Institution of Oceanography to model sound propagation around these fishing vessels and (2) taking in-air sound samples of two pieces of equipment on each vessel during different periods in the haul to see if we can pinpoint the source of noise. 
 
+### Propagation modeling
+
+Link to the [longline-propagation](https://github.com/sfregosi/longline-propagation){target="_blank"} repository which provides an overview of a few of the Phase III data sets and links to a 'Status Report' containing preliminary results. 
 
 <sub>[Back to top](#)</sub>
 
