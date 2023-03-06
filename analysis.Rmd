@@ -156,25 +156,118 @@ knitr::include_graphics('images/screenshot_github_analysis-template.png')
 
 ## Odontocetes
 
-- Manually scan LTSAs to mark start/stop time of odontocete acoustic events 
-  - Use Triton to scan full deployment. Latest version: [MarineBioAcousticsRC/Triton](https://github.com/MarineBioAcousticsRC/Triton)
-  - Manual picks can be made using Triton Logger, or just manually noted in a table
-  - Create a new table/log for each recorder in a given trip (e.g., `log_LL060_FR38_DL65.xls`)
+### Encounter annotation
+
+Candidate odontocete encounters are first manually logged in MATLAB-based program Triton. This identifies the actual areas of interest for odontocete detection and classification and excludes periods of just glider or ambient noise. 
+
+#### Logging in Triton
+
+- Use the latest version of Triton hosted on Github: [MarineBioAcousticsRC/Triton](https://github.com/MarineBioAcousticsRC/Triton)
+  - Suggest 'cloning' this repository to your local computer using GitHub/GitHub Desktop to be able to stay up to date with any changes
+- Add Triton to the MATLAB path
+- Add the *Logger Remora*
+- Create a new log per trip/recorder (e.g., `log_LL060_FR38_DL65.xls`)
+- Manually browse the LTSA and mark start and end times of potential odontocete encounters
+  - Use the 5 sec, 100 Hz LTSA for odontocete sounds
+  - View 15-30 minute windows at a time
+  - Adjust brightness and contrast as needed for each deployment and change as needed throughout the deployment as the sound energy changes
   - Note potential species ID as possible; while our focus is fkw, any notes about potential species are useful for any future work
-  - Clean up and collapse final events into a .csv 
+- Clean up and collapse final events into a .csv 
+    - Open the triton-generated log in excel and copy to a new csv file
     - Save .csv with naming convention `LL0##_FR##_DL##_encounterTimes.csv`
     - Must include columns 'start', 'stop', 'sp', and 'id' 
     - `id` column should be manually added and include the trip string and just a sequential account of events (e.g., L064_FR52_DL59_1, L064_FR52_DL59_2...)
-- Run Pamguard detector suite - click, whistle, burst pulse
-  - Use `pam20207b_llharp_banter.psfx` [download here](https://github.com/sfregosi/llamp/blob/main/pamguard/settings/pam20207b_llharp_banter.psfx)
-  - Detail on how this preferences file was built can be found in the [glider-MHI repo](https://github.com/sfregosi/glider-MHI/blob/main/docs/_site/pg_settings.html) or talk to JLKM for more info! 
-  - *For speed, the detectors can be run only over files with known odontocete events by hand selecting just the files of interest*
-- Extract features of click, whistle, and burst pulse detections in `PAMpal` 
-  - List the code here...
-- Use `banter` to predict species label
-  - Specify the model and code scripts here
+    
+### Click, whistle, and burst pulse detection
+
+Pamguard is used to detect individual clicks, whistles, and burst pulses for further analysis. For ease and to prepare for future analyses, Pamguard is run on across the full glider survey dataset. 
+
+#### Pamguard setup
+
+- Use Pamguard version 2.02.07b. 
+  - Typically, the latest Pamguard version is available at [pamguard.org](http://www.pamguard.org/){target='_blank'} but in this case we had a special bug fix release/version and so sourced files from JLKM. 
+  - Installing and configuring Pamguard has a few specific requirements, so if it is a new install, make sure it is set up correctly (note to self: increase memory, `-smru` tag, ensure is in a folder with read/write access)
+- Open Pamguard 2.02.07b
+  - Navigate to where this version of Pamguard is saved (typically `C:\Program Files\pamguardbeta\Pamguard_20207b` or `C:\Program Files\Pamguard\Pamguard_20207b`)
+  - Pamguard has three 'modes'; to run a detector initially, use the primary mode, just called **Pamguard** (it may be **PamguardBeta** depending on the installed version/installed folder location/installation naming convention)
+  - Open the primary mode by double clicking `Pamguard.exe`
+- At startup, load the `pam20207b_llharp_banter.psfx` [download here](https://github.com/sfregosi/llamp/blob/main/pamguard/settings/pam20207b_llharp_banter.psfx){target='_blank'} preferences file
+  - This sets up the basic array configuration, sound acquisition, fft engine, and database modules that will need to be modified for each survey, plus the decimation process, click, whistle and moan, and cepstrum detector modules that should not be modified
+  - Detailed instructions for setting up this preferences file, with screenshots, can be found in the [glider-MHI repo](https://github.com/sfregosi/glider-MHI/blob/main/docs/_site/pg_settings.html) or talk to JLKM for more info! 
+- Save a copy of the preferences file specific for this survey before making any modifications
+  - *File > Save Configuration As ...* 
+  - Name the file the base file name plus the survey string e.g., `pam20207b_llharp_banter_LL060_FR38_DL65.psfx`
+  - Save this preferences file in *pamguard* folder within the `LLHARP\Analysis\phase3` folder on the server 
+- Modify the data input to the Sound Acquisition module
+  - *Settings > Sound Acquisition ...*
+  - In the pop up window, make sure the *Data Source Type* is set to *Audio file folder or multiple files*
+  - Press *Select Folder or Files* to browse for specific files
+  - Navigate to the `.x.wav` folder that contains all .x.wav files for a single recorder, select the folder and press *Select files and folders*. It is ok if this folder also contains an .ltsa or other non .x.wav files
+  - The *File date:* section should now show the start time of the first recording
+  - Leave all other boxes unchecked/as default and press *Ok* to close the Audio Data Acquisition settings window
+  
+```{r ss-sound-aquisition, dpi = 60, fig.link = 'images/screenshot_sound_acquisition_module_folder.png', fig.cap = 'Screenshot showing the correct configuration the Sound Aquisition module'}
+knitr::include_graphics('images/screenshot_sound_acquisition_module_folder.png')
+```
+  
+- Set the output database
+  - *File > Database > Database Selection*
+  - Press *Browse/Create ...*
+  - Navigate to the previously created `pamguard` folder 
+  - If it doesn't already exist, create a `databases` folder within the `pamguard` folder
+  - Navigate to inside the `databases` folder and type the desired filename in the *File name:* field below and press *Open*
+    - Name the database the same as the preferences file (but without the .psfx extension) e.g., `pam20207b_llharp_banter_LL060_FR38_DL65`
+    - This long name long, yes, but is useful because it contains information about the Pamguard version used, the base preferences file, and what acoustic data this database specifically contains
+  - A pop-up will ask to 'Create blank database [filename.sqlite3]' and hit *OK*
+  - Press *OK* on the *Database Selection* window
+- Set the output binaries folder
+  - *File > Binary Store > Storage Options ...*
+  - In the *Binary Store Options* window press *Browse*
+  - Navigate to the `pamguard` folder 
+  - If it doesn't already exist, create a `binaries` folder within the `pamguard` folder
+  - Navigate to inside the `binaries` folder and enter the desired binaries folder name in the *Folder name:* field below and press *Select storage folder*
+    - Name the binaries the same as the database and preferences files e.g., `pam20207b_llharp_banter_LL060_FR38_DL65`
+  - Press *Ok*
+  - A pop up will appear stating 'The directory [foldername] does not exist do you want to create it?' and press *Yes*
+  - Press *Ok* again on the *Binary Store Options* window
+- Save these changes with *File > Save Configuration* to save all the changes that have now been mapped to your PC and are specific for this survey
+
+
+```{r ss-binary-store, dpi = 50, fig.link = 'images/screenshot_binary_store_options.png', fig.cap = 'Screenshot showing the correct configuration for the binary storage folder'}
+knitr::include_graphics('images/screenshot_binary_store_options.png')
+```
+
+#### Run Pamguard
+
+Each glider will be run individually and this will take several hours to days to run
+
+- Press the red circular **record** button to start processing the selected files/folder
+- A spectrogram should start scrolling in the *Spectrogram* tab and colored symbols should start appearing on the *Click Detection* tab as clicks are detected
+- Clicks can be examined in real-time by clicking on individual symbols
+- The **pause** button at the top can be used to stop processing at the current file, and when the **record** button is pressed again it will resume where it previously paused
+- If the process is stopped and Pamguard is closed, when it is reopened the process would start at the first file in the folder, resulting in possibly duplicate results in the database and binaries
+
+#### Backup database and binaries
+
+Each time a database and/or binaries are opened in Pamguard Viewer after being created, they have the potential to be modified. This could overwrite or mess things up so it is good practice to always save an 'original copy' of the database and binaries before doing any additional analyses. 
+
+- Make a copy of both the database and folder of binaries and store on the data hard drive in a folder called `originals` within the `pamguard` folder. 
+
+
+## Classification
+
+The clicks, burst pulses, and whistles detected using Pamguard are exported and fed into the classification R package `banter` to try to identify which encounters were possibly FKW and which were likely other odontocete species. 
+
+This protocol/methodology is not as well fleshed out yet...  
+**`r fa(name = 'person-digging')` THIS SECTION UNDER CONSTRUCTION**
+
+
+
 
 ## Noise
+
+**`r fa(name = 'person-digging')` THIS SECTION UNDER CONSTRUCTION**
+
 - Run Pamguard detector using `PAM2016_LLHARP_noise.psfx`
 - Manually scan LTSAs to define start/end time of gear noise
 - Run TOL noise detectors (option to use SanctSound metrics or PG noise module) 
