@@ -47,10 +47,7 @@ Create a new post-processing issue for the latest trip
 knitr::include_graphics('images/screenshot_github_analysis-template.png')
 ```
 
-## Detailed data-checking instructions 
-[moving this here from processing steps!]
-
-### Metadata and data checks
+## Metadata and data checks
 - Add trip to `phase_3_multi_deployments_summary.xlsx` on 5 tabs
   - **DataSummary_UW:** add 5 rows following format of previous trips with trip number in column A, vessel name and frame/datalogger numbers in column B, and the date for each deployed set (1 up to 8) in columns C to J). Note any problems or inconsistencies for each recorder in the 'notes' column
   - **DataSummary_IA:** added 7 rows, copying the 'Status' and 'Location' column values from an earlier trip
@@ -96,7 +93,7 @@ knitr::include_graphics('images/screenshot_github_analysis-template.png')
 
 <sub>[Back to top](#)</sub>
 
-### Process trip 
+## Process trip 
 
 Run `workflow_processTrip.m` to work through converting the summary docs to .mat, running some log checks, and splitting up .xwavs that span multiple sets. 
 
@@ -122,7 +119,7 @@ Run `workflow_processTrip.m` to work through converting the summary docs to .mat
   
 <sub>[Back to top](#)</sub>
   
-### Final checks
+## Final checks
 
 After `workflow_processTrip.m`, finalize the created ltsas and summary docs. 
 
@@ -156,14 +153,18 @@ knitr::include_graphics('images/screenshot_github_analysis-template.png')
 
 ## Odontocetes
 
-### Encounter annotation
+Identifying false killer whale vocalizations from the longline recordings involves three main steps: manual annotation of possible odontocete events, automated detection of clicks, whistles, and burst pulses, and classification of the events based on the outputs of the detection process to provide a probability of false killer whale or unidentified odontocete species. 
+The manual [event annotation](#event-annotation) and [automated detection](#automated-detection) steps can be done simultanously/in any order; they do not rely on one another. The [classification](#classification) steps require the outputs from both the manual annotation and automated detection so must be done last. 
 
-Candidate odontocete encounters are first manually logged in MATLAB-based program Triton. This identifies the actual areas of interest for odontocete detection and classification and excludes periods of just glider or ambient noise. 
+### Event annotation
+
+Candidate odontocete events are manually logged in MATLAB-based program Triton. This identifies the actual areas of interest, or analysis units, for odontocete detection and classification.
 
 #### Logging in Triton
 
 - Use the latest version of Triton hosted on Github: [MarineBioAcousticsRC/Triton](https://github.com/MarineBioAcousticsRC/Triton)
   - Suggest 'cloning' this repository to your local computer using GitHub/GitHub Desktop to be able to stay up to date with any changes
+  - If you will be running analyses on a virtual machine, you can clone the repository to a folder on your user drive that will be accessible when remoted in to the virtual machine. After cloning, right-click on this repository from the list of repositories within GitHub Desktop and select 'Create alias' to add a 'VM' or 'remote' label to this repository to distinguish it from any local copies
 - Add Triton to the MATLAB path
 - Add the *Logger Remora*
 - Create a new log per trip/recorder (e.g., `log_LL060_FR38_DL65.xls`)
@@ -173,14 +174,17 @@ Candidate odontocete encounters are first manually logged in MATLAB-based progra
   - Adjust brightness and contrast as needed for each deployment and change as needed throughout the deployment as the sound energy changes
   - Note potential species ID as possible; while our focus is fkw, any notes about potential species are useful for any future work
 - Clean up and collapse final events into a .csv 
-    - Open the triton-generated log in excel and copy to a new csv file
+    - Open the Triton-generated log in excel and copy to a new csv file
     - Save .csv with naming convention `LL0##_FR##_DL##_encounterTimes.csv`
     - Must include columns 'start', 'stop', 'sp', and 'id' 
     - `id` column should be manually added and include the trip string and just a sequential account of events (e.g., L064_FR52_DL59_1, L064_FR52_DL59_2...)
-    
-### Click, whistle, and burst pulse detection
+    - A fifth notes column can be included if relevant
+  
+<sub>[Back to top](#)</sub>
 
-Pamguard is used to detect individual clicks, whistles, and burst pulses for further analysis. For ease and to prepare for future analyses, Pamguard is run on across the full glider survey dataset. 
+### Automated detection
+
+Pamguard is used to detect individual clicks, whistles, and burst pulses for further analysis. For ease and to prepare for future analyses, Pamguard is run on the full set of recordings for a given trip. For speed, Pamguard could be run just across the odontocete encounters above, but it generally runs fairly quickly and so is simpler to just run over the full xwav folder. 
 
 #### Pamguard setup
 
@@ -196,17 +200,17 @@ Pamguard is used to detect individual clicks, whistles, and burst pulses for fur
   - Detailed instructions for setting up this preferences file, with screenshots, can be found in the [glider-MHI repo](https://github.com/sfregosi/glider-MHI/blob/main/docs/_site/pg_settings.html) or talk to JLKM for more info! 
 - Save a copy of the preferences file specific for this survey before making any modifications
   - *File > Save Configuration As ...* 
-  - Name the file the base file name plus the survey string e.g., `pam20207b_llharp_banter_LL060_FR38_DL65.psfx`
+  - Name the file the base file name plus the trip/recorder string e.g., `pam20207b_llharp_banter_LL060_FR38_DL65.psfx`
   - Save this preferences file in *pamguard* folder within the `LLHARP\Analysis\phase3` folder on the server 
 - Modify the data input to the Sound Acquisition module
   - *Settings > Sound Acquisition ...*
   - In the pop up window, make sure the *Data Source Type* is set to *Audio file folder or multiple files*
   - Press *Select Folder or Files* to browse for specific files
-  - Navigate to the `.x.wav` folder that contains all .x.wav files for a single recorder, select the folder and press *Select files and folders*. It is ok if this folder also contains an .ltsa or other non .x.wav files
+  - Navigate to the `xwavs` folder that contains all .x.wav files for a single recorder, select the folder and press *Select files and folders*. It is ok if this folder also contains an .ltsa or other non .x.wav files
   - The *File date:* section should now show the start time of the first recording
   - Leave all other boxes unchecked/as default and press *Ok* to close the Audio Data Acquisition settings window
   
-```{r ss-sound-aquisition, dpi = 60, fig.link = 'images/screenshot_sound_acquisition_module_folder.png', fig.cap = 'Screenshot showing the correct configuration the Sound Aquisition module'}
+```{r ss-sound-aquisition, dpi = 60, fig.link = 'images/screenshot_sound_acquisition_module_folder.png', fig.cap = 'Screenshot showing the correct configuration of the Sound Aquisition module for an example folder of wav files'}
 knitr::include_graphics('images/screenshot_sound_acquisition_module_folder.png')
 ```
   
@@ -220,6 +224,11 @@ knitr::include_graphics('images/screenshot_sound_acquisition_module_folder.png')
     - This long name long, yes, but is useful because it contains information about the Pamguard version used, the base preferences file, and what acoustic data this database specifically contains
   - A pop-up will ask to 'Create blank database [filename.sqlite3]' and hit *OK*
   - Press *OK* on the *Database Selection* window
+  
+```{r ss-database, dpi = 50, fig.link = 'images/screenshot_database-selection.png', fig.cap = 'Screenshot showing the correct configuration for specifying the output database'}
+knitr::include_graphics('images/screenshot_database-selection.png')
+```
+
 - Set the output binaries folder
   - *File > Binary Store > Storage Options ...*
   - In the *Binary Store Options* window press *Browse*
@@ -232,14 +241,13 @@ knitr::include_graphics('images/screenshot_sound_acquisition_module_folder.png')
   - Press *Ok* again on the *Binary Store Options* window
 - Save these changes with *File > Save Configuration* to save all the changes that have now been mapped to your PC and are specific for this survey
 
-
 ```{r ss-binary-store, dpi = 50, fig.link = 'images/screenshot_binary_store_options.png', fig.cap = 'Screenshot showing the correct configuration for the binary storage folder'}
 knitr::include_graphics('images/screenshot_binary_store_options.png')
 ```
 
 #### Run Pamguard
 
-Each glider will be run individually and this will take several hours to days to run
+Each recorder from each trip will be run individually and this will take several hours to run.
 
 - Press the red circular **record** button to start processing the selected files/folder
 - A spectrogram should start scrolling in the *Spectrogram* tab and colored symbols should start appearing on the *Click Detection* tab as clicks are detected
@@ -247,33 +255,56 @@ Each glider will be run individually and this will take several hours to days to
 - The **pause** button at the top can be used to stop processing at the current file, and when the **record** button is pressed again it will resume where it previously paused
 - If the process is stopped and Pamguard is closed, when it is reopened the process would start at the first file in the folder, resulting in possibly duplicate results in the database and binaries
 
-#### Backup database and binaries
+#### Backup outputs
 
 Each time a database and/or binaries are opened in Pamguard Viewer after being created, they have the potential to be modified. This could overwrite or mess things up so it is good practice to always save an 'original copy' of the database and binaries before doing any additional analyses. 
 
-- Make a copy of both the database and folder of binaries and store on the data hard drive in a folder called `originals` within the `pamguard` folder. 
+- Make a copy of both the database and folder of binaries and store on the data server in a folder called `originals` within the `pamguard` folder. 
 
+<sub>[Back to top](#)</sub>
 
-## Classification
+### Classification
 
-The clicks, burst pulses, and whistles detected using Pamguard are exported and fed into the classification R package `banter` to try to identify which encounters were possibly FKW and which were likely other odontocete species. 
+The clicks, burst pulses, and whistles detected using Pamguard are grouped by event (from the manual annotation) and exported by R package `PAMpal`, then fed into the classification R package `banter` to try to identify which encounters were possibly FKW and which were likely other odontocete species. 
 
-This protocol/methodology is not as well fleshed out yet...  
 **`r fa(name = 'person-digging')` THIS SECTION UNDER CONSTRUCTION**
 
+This protocol/methodology is being updated because it isn't working at the moment! 
 
 
+
+
+<sub>[Back to top](#)</sub>
 
 ## Noise
 
+
+### Underwater recordings
+
+The primary question for this stage of noise analysis is just if/when it is present in the underwater recordings. The best way to identify the noise in recordings is from manual scanning of LTSAs. 
+
+- Create finer-resolution LTSA in Triton using 2 sec, 10 Hz averaging for noise analysis
+- Manually scan the LTSA, plotting from 0 Hz to 5 or 10 kHz, and 2-4 hours at a time
+- Mark the start and end noise of any possible gear noise
+
+If the noise is detected, we may conduct additional manual and automated analyses in Pamguard to identify individual clusters and quantify the timing of these clusters.
+
+```{r ss-noise-ltsa, dpi = 50, fig.link = 'images/LL039_set1_noiseExampleLTSA.png', fig.cap = 'Example LTSA showing the gear noise of interest. The noise is present around 1.5 kHz from the 0.2 to 1.8 hours, with the loudest part centered around 0.6 hours'}
+knitr::include_graphics('images/LL039_set1_noiseExampleLTSA.png')
+```
+
+
 **`r fa(name = 'person-digging')` THIS SECTION UNDER CONSTRUCTION**
 
-- Run Pamguard detector using `PAM2016_LLHARP_noise.psfx`
-- Manually scan LTSAs to define start/end time of gear noise
-- Run TOL noise detectors (option to use SanctSound metrics or PG noise module) 
-- Update list of vessels with gear noise detected
+Additional automated approaches have been done in the past, but we are holding off on those for now, because they weren't as reliable as manual scanning. These include the Pamguard Noise Band Monitor Module (using the `pam20207b_llharp_noise.psfx` preferences file - [download here](https://github.com/sfregosi/llamp/blob/main/pamguard/settings/pam20207b_llharp_noise.psfx){target='_blank'}) and SanctSound metrics (both third octave level approaches). 
 
-## In-Air
+```{r ss-noise-band, dpi = 80, fig.link = 'images/screenshot_noise_data_model.png', fig.cap = 'Screenshot showing the data model for the pam20207b_llharp_noise.psfx preferences file, which runs a Noise Band Monitor process'}
+knitr::include_graphics('images/screenshot_noise_data_model.png')
+```
+
+## In-air recordings
+
+**`r fa(name = 'person-digging')` THIS SECTION UNDER CONSTRUCTION**
 
 Under development
 - Review Zoom recordings to characterize sound
