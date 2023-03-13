@@ -176,9 +176,10 @@ Candidate odontocete events are manually logged in MATLAB-based program Triton. 
 - Clean up and collapse final events into a .csv 
     - Open the Triton-generated log in excel and copy to a new csv file
     - Save .csv with naming convention `LL0##_FR##_DL##_encounterTimes.csv`
-    - Must include columns 'start', 'stop', 'sp', and 'id' 
-    - `id` column should be manually added and include the trip string and just a sequential account of events (e.g., L064_FR52_DL59_1, L064_FR52_DL59_2...)
+    - Must include columns 'start', 'stop', 'species', and 'id' 
+    - 'id' column should be manually added and include the trip string and just a sequential account of events (e.g., L064_FR52_DL59_1, L064_FR52_DL59_2...)
     - A fifth notes column can be included if relevant
+    - *These column namings, and what is listed can lead to some issues/unexpected outcomes when exporting in `PAMpal` and predicting with `banter` so this might change!*
   
 <sub>[Back to top](#)</sub>
 
