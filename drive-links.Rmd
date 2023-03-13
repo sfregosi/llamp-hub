@@ -30,6 +30,8 @@ Most (all?) of these live in various folders within the [**LLHARP Master**](http
 [**Longline HARP Deployments**](https://docs.google.com/spreadsheets/d/18i4czz6so-GHgFrCRncpLNZxTErdu4yFvi-Z-VwTEdM/edit#gid=1521628320):
 Record of trip numbers, vessels, and captain/owner/observer contact information. This contains vessel names, trip dates, and personal info so it is restricted to only being shared within our group. 
 
+[**Acoustic Server Data Organization**](https://docs.google.com/spreadsheets/d/12dkFpM7FA4qUG-K3MNQCJFebb_e-9eTtFJ_p4G_hbAs/edit#gid=337699346){target='_blank'}: Detailed list of server locations for all acoustic data, including LLHARP data. This document is restricted to only being shared within our group. 
+
 
 ### Vessel recruitment
 
