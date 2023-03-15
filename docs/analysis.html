@@ -2728,7 +2728,11 @@ Other
 <li><a href="#run-pamguard" id="toc-run-pamguard">Run Pamguard</a></li>
 <li><a href="#backup-outputs" id="toc-backup-outputs">Backup outputs</a></li>
 </ul></li>
-<li><a href="#classification" id="toc-classification">Classification</a></li>
+<li><a href="#classification" id="toc-classification">Classification</a>
+<ul>
+<li><a href="#cloning-code" id="toc-cloning-code">Cloning code</a></li>
+<li><a href="#running-classification" id="toc-running-classification">Running classification</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#noise" id="toc-noise">Noise</a>
 <ul>
@@ -2921,9 +2925,11 @@ The manual <a href="#event-annotation">event annotation</a> and <a href="#automa
 <ul>
 <li>Open the Triton-generated log in excel and copy to a new csv file</li>
 <li>Save .csv with naming convention <code>LL0##_FR##_DL##_encounterTimes.csv</code></li>
-<li>Must include columns ‘start’, ‘stop’, ‘sp’, and ‘id’</li>
-<li><code>id</code> column should be manually added and include the trip string and just a sequential account of events (e.g., L064_FR52_DL59_1, L064_FR52_DL59_2…)</li>
+<li>Must include columns ‘start’, ‘stop’, ‘species’, and ‘id’<br />
+</li>
+<li>‘id’ column should be manually added and include the trip string and just a sequential account of events (e.g., L064_FR52_DL59_1, L064_FR52_DL59_2…)</li>
 <li>A fifth notes column can be included if relevant</li>
+<li><em>These column namings, and what is listed can lead to some issues/unexpected outcomes when exporting in <code>PAMpal</code> and predicting with <code>banter</code> so this might change!</em></li>
 </ul></li>
 </ul>
 <p><sub><a href="#">Back to top</a></sub></p>
@@ -3037,8 +3043,75 @@ Figure 5: Screenshot showing the correct configuration for the binary storage fo
 <p><sub><a href="#">Back to top</a></sub></p>
 <h3 id="classification">Classification</h3>
 <p>The clicks, burst pulses, and whistles detected using Pamguard are grouped by event (from the manual annotation) and exported by R package <code>PAMpal</code>, then fed into the classification R package <code>banter</code> to try to identify which encounters were possibly FKW and which were likely other odontocete species.</p>
-<p><strong><svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M304 64c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zM9.8 214.8c5.1-12.2 19.1-18 31.4-12.9L60.7 210l22.9-38.1C99.9 144.6 129.3 128 161 128c51.4 0 97 32.9 113.3 81.7l34.6 103.7 79.3 33.1 34.2-45.6c6.4-8.5 16.6-13.3 27.2-12.8s20.3 6.4 25.8 15.5l96 160c5.9 9.9 6.1 22.2 .4 32.2s-16.3 16.2-27.8 16.2H288c-11.1 0-21.4-5.7-27.2-15.2s-6.4-21.2-1.4-31.1l16-32c5.4-10.8 16.5-17.7 28.6-17.7h32l22.5-30L22.8 246.2c-12.2-5.1-18-19.1-12.9-31.4zm82.8 91.8l112 48c11.8 5 19.4 16.6 19.4 29.4v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V405.1l-60.6-26-37 111c-5.6 16.8-23.7 25.8-40.5 20.2S-3.9 486.6 1.6 469.9l48-144 11-33 32 13.7z"/></svg> THIS SECTION UNDER CONSTRUCTION</strong></p>
-<p>This protocol/methodology is being updated because it isn’t working at the moment!</p>
+<h4 id="cloning-code">Cloning code</h4>
+<p>Classification code is located in the <a href="https://github.com/sfregosi/llamp">llamp</a> repository in the <a href="https://github.com/sfregosi/llamp/tree/main/R">R folder</a>.</p>
+<p>Because this code may be regularly updated, it is best to work directly with it using GitHub/GitHub Desktop. If you plan to make modifications to the code (for example, updating paths to a specific machine or workflow) then it is best to make a new <strong>‘branch’</strong> on this repository to have your own separate stream of edits. This <strong>‘branch’</strong> is an off-shoot of the original so you’ll be able to pull in updates committed to the original repo, and you’ll be able to make ‘pull requests’ to contribute any more broad changes to the original. But, with a branch, your changes won’t automatically get updated for others and it will avoid conflicts of multiple people working within the code at once. <em>Creating a branch is only possible if you are a collaborator in the repository; if not, you can ‘fork’ the repository and still stay up-to-date with changes as well as make pull-requests.</em></p>
+<p>The classification process also requires some functions located in the <a href="https://github.com/sfregosi/CRPTools">CRPTools</a> repository. This repository only needs to be cloned to your local machine (first section below) because it will not be modified for a particular computer.</p>
+<p>Below are suggested steps for cloning, creating a new branch, and working with GitHub/GitHub Desktop.</p>
+<p><strong>To clone a repository:</strong></p>
+<ul>
+<li>Open GitHub Desktop</li>
+<li>Select <em>File</em> &gt; <em>Clone repository…</em></li>
+<li>Select the <em>URL</em> tab and paste <code>https://github.com/sfregosi/llamp</code> into the empty URL space</li>
+<li>Specify the location to save the repository on your local machine (suggest <code>documents\github\llamp</code>) and hit <em>Clone</em></li>
+<li>This will copy all the <code>llamp</code> components to the specified folder</li>
+<li>Select this repository within GitHub Desktop from the <em>Current repository</em> drop down repository list on the left side</li>
+</ul>
+<p><strong>To create a new branch:</strong></p>
+<ul>
+<li>The default/primary branch is called <code>main</code>. In the <em>Current branch</em> drop down, select <em>New branch</em> and provide the branch a name (e.g., <code>fregosi</code> or <code>picsn28</code> - the name of your computer)</li>
+<li>This will create a new branch and and it’s name should now appear in the <em>Current branch</em> section in GitHub Desktop</li>
+<li>Whenever you want to switch between branches, you select it from this drop down in GitHub Desktop. But, once one branch is selected, it should remain the chosen branch through computer restarts, etc, but it is always good to double check if making major changes!</li>
+<li>Finally, hit <em>Publish this branch</em> to push this branch to the ‘remote’ location of this repository on github.com. This will only need to be done once after creating a new branch</li>
+</ul>
+<p><strong>Committing, pushing, and pulling changes:</strong></p>
+<ul>
+<li>Whenever you make changes to code on your local machine, these changed files will appear in the left side panel of GitHub Desktop. After making a set of specific changes, you can create a <em>snapshot</em> of the files at that point in time (so you can go back if something bad happens, or others can easily track what was changed – the purpose of version control!) by making a <strong>‘commit’</strong> for these changes. Do so by typing a short message/description in the lower left and hitting <em>Commit</em></li>
+<li>After committing changes, those changes have been saved on your local repository and branch, but ONLY locally. After making a commit, or several commits (e.g, at the end of the day), <strong>‘push’</strong> these changes to the remote repository on Github.com using the <em>Push origin</em> button on the top right of GitHub Desktop</li>
+<li>The top-right will display different options depending on what changes are available
+<ul>
+<li>If there are local changes, it will display <em>Push origin</em>; it is good practice to push all commits at the end of each day or session working with a particular code set</li>
+<li>If there are no local changes, it will say <em>Fetch origin</em>, which will check for new changes from the web</li>
+<li>If there are changes present on the remote that are not yet local, it will say <em>Pull origin</em></li>
+<li>It is good practice to fetch and pull changes at the start of each day or session to avoid any conflicts of files being changed simultaneously in two locations. If you are working within your own branch, you will be the only one making changes so there won’t really be unexpected changes to be pulled from the web. But, if you are working within the same branch as others, or with code that you are not modifying but others are regularly updating, this becomes more critical</li>
+</ul></li>
+</ul>
+<h4 id="running-classification">Running classification</h4>
+<p>Use the <code>workflow_fkw_predict_phase3.R</code> script to process, the manual events, Pamguard detections, and predict species ID with an existing classification model.</p>
+<ul>
+<li>Open RStudio and open the <code>llamp.rproj</code>
+<ul>
+<li>Either go to <em>File</em> &gt; <em>Open Project</em> and navigate to the <code>llamp</code> folder and choose <code>llamp.rproj</code> or</li>
+<li>Click on the drop down in the top right of RStudio, select <em>Open Project</em> and navigate to the <code>llamp</code> folder and <code>llamp.rproj</code> file</li>
+<li>If the project has been opened before, use the top right drop down to select <code>llamp</code> from the list of recent projects</li>
+</ul></li>
+<li>The <em>Files</em> tab within RStudio should now show the <code>llamp</code> folder. Navigate to the <code>R</code> folder and open <code>workflow_fkw_predict_phase3.R</code></li>
+<li>To run individual lines of code in RStudio, put the cursor somewhere in the line and hit <em>Ctrl + Enter</em>. From there it will move you down to the next line so you can continually press <em>Ctrl + Enter</em> to move through the script</li>
+<li>Ensure the proper packages have been installed/updated and loaded</li>
+<li>Make needed changes in the <strong>USER DEFINED INPUTS</strong> section
+<ul>
+<li>Update the trip number and recorder string for the dataset to be classified</li>
+<li>Update the paths as necessary to map to the data input and analysis output locations
+<ul>
+<li><code>path_data</code> and <code>path_local</code> are actually not needed but have been left just in case they are later. They can be commented out with <code>#</code></li>
+<li><code>path_analysis</code> should map to the folder that contains the <code>pamguard</code> folder which in turn contains the <code>databases</code> and <code>binaries</code> sub directories</li>
+<li><code>path_pg</code> will be generated based on <code>path_analysis</code></li>
+</ul></li>
+<li>Run all lines in this section after updating</li>
+</ul></li>
+<li>Step through all lines in the <strong>PAMpal steps</strong> section
+<ul>
+<li>Enter 16 for <em>bit rate</em> when prompted during parameter object creation</li>
+<li>When running <code>View(banter_dets)</code> double check that events all match what was exported in the <code>encounterTimes.csv</code>. There should be a column for start, end, species, and id (unique event id)</li>
+<li>This will save several <code>.rda</code> rdata object outputs in an <code>eventData</code> folder</li>
+</ul></li>
+<li>Step through all lines in the <strong>BANTER steps</strong> section
+<ul>
+<li>First, load the existing model</li>
+<li>Update the path to the CRPTools repository if needed</li>
+<li>Predicted species labels will be saved in a .csv</li>
+</ul></li>
+</ul>
 <p><sub><a href="#">Back to top</a></sub></p>
 <h2 id="noise">Noise</h2>
 <h3 id="underwater-recordings">Underwater recordings</h3>
@@ -3080,7 +3153,7 @@ Figure 7: Screenshot showing the data model for the pam20207b_llharp_noise.psfx 
 - This is the approach used in Bayless et al. 2017</p>
 <p><sub><a href="#">Back to top</a></sub></p>
 <h2 class="appendix" id="last-updated">Last updated</h2>
-<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M216.1 408.1C207.6 418.3 192.4 418.3 183 408.1L119 344.1C109.7 335.6 109.7 320.4 119 311C128.4 301.7 143.6 301.7 152.1 311L200 358.1L295 263C304.4 253.7 319.6 253.7 328.1 263C338.3 272.4 338.3 287.6 328.1 296.1L216.1 408.1zM128 0C141.3 0 152 10.75 152 24V64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0zM400 192H48V448C48 456.8 55.16 464 64 464H384C392.8 464 400 456.8 400 448V192z"/></svg> 13 March 2023</p>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M216.1 408.1C207.6 418.3 192.4 418.3 183 408.1L119 344.1C109.7 335.6 109.7 320.4 119 311C128.4 301.7 143.6 301.7 152.1 311L200 358.1L295 263C304.4 253.7 319.6 253.7 328.1 263C338.3 272.4 338.3 287.6 328.1 296.1L216.1 408.1zM128 0C141.3 0 152 10.75 152 24V64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0zM400 192H48V448C48 456.8 55.16 464 64 464H384C392.8 464 400 456.8 400 448V192z"/></svg> 15 March 2023</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
