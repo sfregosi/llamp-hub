@@ -304,6 +304,9 @@ Below are suggested steps for cloning, creating a new branch, and working with G
   - If there are changes present on the remote that are not yet local, it will say *Pull origin*
   - It is good practice to fetch and pull changes at the start of each day or session to avoid any conflicts of files being changed simultaneously in two locations. If you are working within your own branch, you will be the only one making changes so there won't really be unexpected changes to be pulled from the web. But, if you are working within the same branch as others, or with code that you are not modifying but others are regularly updating, this becomes more critical
 
+**Merging/updating branches**
+
+See this other page: [branch-merge](branch-merge.html)
  
 #### Running classification
 
