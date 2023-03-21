@@ -1,0 +1,134 @@
+---
+title: "Project Overview"
+description: |
+  Overview of the main components of the Longline Acoustic Monitoring Project
+favicon: docs/images/favicon.ico
+output: 
+  distill::distill_article:
+    self_contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    css: static/toc-styles.css
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE,}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.align = 'center')
+
+library(fontawesome)
+library(htmltools)
+```
+
+This is an overview of the five main components that make up the Longline Acoustic Monitoring Project and what specific tasks are part of each component. There is a suggested 'lead' for each step as well as noted team members. Very detailed protocols for each component can be found in the drop down **Protocols** menu.  
+
+This is from the original [LLHARP Project Management Steps](https://docs.google.com/document/d/1ReMTYiU1ZlUmcYkOsV70ii5NW79abwt_II2aUSclZeE/edit#heading=h.arpv8eucrye4){target="_blank"} document on Google Drive 
+
+
+
+## Vessel facilitation
+This component includes: recruitment of volunteer vessels, coordinating with the Observer Program to find out when volunteer vessels get assigned an observer, and communicating with the vessel captain, crew, and assigned observer before and after a trip.
+
+*Lead: SF, in coordination with NL, and communicating with the Observer Program and port coordinators*
+
+**Detailed steps and relevant links:** [Vessel facilitation](vessels.html)
+
+#### Brief overview of responsibilities
+- NL-Saltwater works on active vessel recruitment 
+- SF shares volunteer vessel list with Observer Program
+- Observer Program alerts SF when a boat on the volunteer list is selected for an observer
+- NL connects with owner/captain to confirm participation and coordinate a time for gear hand off, instruction, and to provide datasheets/instructions
+  - This needs to be done in coordination with the Observer Program to make sure observer is agreeable to the project and receives instructions
+- SF coordinates with NL to arrange for gear pick up at IRC after its ready
+- After trip, NL returns gear and data sheets from the boat to IRC
+
+
+## Hardware
+This component of the project includes all equipment preparation, breakdown, and repair, plus associated documentation through checksheets and updates to deployment tables. These steps need to be completed on-island by CRP team members who have access to IRC and have been trained through the process. 
+
+*Lead: EN, with help from YB and JM, and coordinating with SF*
+
+**Detailed steps and relevant links:** [Hardware](hardware.html)
+
+#### Brief overview of responsibilities
+
+##### Setup - before deployment
+- LLHARP assembly and programming
+- TDR programming and attachment
+- In-air recorder preparation
+
+##### Breakdown - after recovery
+- TDR stop and offload
+- Breakdown LLHARPs
+- Breakdown in-air recorders
+- Scan deployment and recovery check sheets, observer data sheets and upload to server
+- Hand off data cards to be uploaded to server and for initial processing(typically YB)
+
+
+## Data processing
+
+Data processing must also be done on-island, at least in part, because it requires physical connection to the data loggers for data offload, and the server for data upload. Data processing includes initial imagine of HRP files from the SD cards, extracting xwavs from HRPs, and uploading all data to the server. 
+
+*Lead: YB, coordinating with SF*
+
+**Detailed steps and relevant links:** [Data processing protocol](processing.html)
+
+#### Brief overview of responsibilities
+- Imaging the HRP from the SD cards
+- Offload of in-air recordings from Zoom recorder memory cards
+- Upload of HRPs, TDR, and in-air data to the server
+- Converting the HRP to xwavs
+
+
+## Data analysis 
+This component of the project can be completed off-island once the data are uploaded to the server. 
+
+*Lead: SF, transitioning to JT(?)*
+
+**Detailed steps and relevant links:** [Analysis protocol](analysis.html)
+
+#### Brief overview of responsibilities
+
+##### Post-processing/data check
+- Check acoustic data for presence and quality
+- Check and transcribe observer datasheets
+- Split xwavs to resolve timing issues
+
+##### Detect and classify odontocete acoustic encounters
+- Manually scan LTSAs to define start/end time of odontocete acoustic 
+- Run Pamguard detectors - click, whistle, burst pulse, & noise
+- Feature extraction of detections using `PAMpal`
+- Species prediction with `banter`
+
+##### Detect and describe anthropogenic noise
+- Manually scan LTSAs to define start/end time of gear noise
+- Run TOL noise detectors (option to use SanctSound metrics or PG noise module) 
+- Update list of vessels with gear noise detected
+
+##### In-air recordings (Phase 3 only)
+- Scan and Upload Observer datasheet from Zoom recorder
+- Transfer Zoom recordings and upload to server
+- Review Zoom recordings to characterize sound
+
+
+
+## Reporting
+
+*Lead: SF, transitioning to JT(?)*
+
+**_UNDER DEVELOPMENT_**
+
+**Detailed steps and relevant links:** [Reporting protocol](reporting.html)
+
+#### Brief overview of responsibilities
+- Generate Feedback for Captain (TBD)
+	- Potential format: written+visual summary, voice recording
+	- Accessibility - English/Vietnamese/Korean, best format for captains (e.g. text message, email, voice message?)  
+
+
+
+
+
+## Last Updated {.appendix}
+
+`r fa(name = "calendar-check")` `r format(Sys.Date(), "%d %B %Y")`

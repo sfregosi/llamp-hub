@@ -3,7 +3,7 @@ title: "Longline Acoustic Monitoring Project Hub"
 description: |
   A landing page for all things Longline Acoustic Monitoring
 favicon: "images/favicon.ico"
-output_dir: "docs"
+output_dir: "_site"
 base_url: https://sfregosi.github.io/llamp-hub
 repository_url: https://github.com/sfregosi/llamp-hub
 navbar:
@@ -17,8 +17,6 @@ navbar:
       href: index.html
     - text: "Protocols"
       menu:
-#      - text: "Project overview"
-#        href: project_overview.html
       - text: "Vessel facilitation"
         href: vessels.html
       - text: "Hardware"
@@ -33,8 +31,10 @@ navbar:
       menu:
       - text: "Summary"
         href: summary.html
-      - text: "Drive docs"
+      - text: "Drive links"
         href: drive-links.html
+      - text: "Project overview"
+        href: project-overview.html
  #     - text: "2022 Manuscript - Data Guide"
  #       href: simonis_data_guide.html
  #     - text: "2022 Manuscript - Comparison"

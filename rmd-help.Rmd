@@ -1,0 +1,88 @@
+---
+title: "Rmd Help"
+description: | 
+  Placeholder doc with all the useful rmd tidbits used in this site
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE,}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.align = 'center')
+
+library(fontawesome)
+library(xaringanExtra)
+library(htmltools)
+```
+
+```{r, xaringanExtra-clipboard, echo=FALSE}
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clone fa-2x\" style=\"color: #301e64\"></i>",
+    success_text = "<i class=\"fa fa-check fa-2x\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times fa-2x\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+This page is a 'hidden' (meaning it isn't linked anywhere within the `llamp-hub`) page as sort of a copy/paste clipboard for useful bits of rmd code that are used often within this site. 
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## how to use FontAwesome icons
+
+`r fa(name = "person-digging")`
+
+
+# Figures
+Example for including a static image:
+
+```{r fkw, fig.cap="false killer whale"}
+knitr::include_graphics("images/640x427-false-killer-whale.png")
+```
+
+# References
+To reference to stuff within the page, like Figure. \@ref(fig:fkw)
+
+
+<!-- <aside> -->
+<!-- Last updated: "`r Sys.Date()`" -->
+<!-- </aside> -->
+
+:::
+
+:::
+
+---
+## Last Updated {.appendix}
+
+`r fa(name = "calendar-check")` `r format(Sys.Date(), "%d %B %Y")`
+
+## Acknowledgments {.appendix}
+
+This is a place to recognize people and institutions. It may also be a good place
+to acknowledge and cite software that makes your work possible.
+
+## Author Contributions {.appendix}
+
+We strongly encourage you to include an author contributions statement briefly 
+describing what each author did.
+
