@@ -22,6 +22,32 @@ library(fontawesome)
 
 To be filled in...
 
+Scripts are differentiated from functions because they typically start with `workflow_` in the file name. 
+
+
+#### `workflow_processTrip.m`
+Script to complete various post-processing steps for a longline trip. Has 5 main components: 
+
+(1) Read in observer data, conduct some timing checks, reformats into a `.mat` file, calculates set phase durations
+(2) Update `recorderKey` with frame/datalogger configs for this trip
+(3) Summarize recording durations by set and recorder, requires manual checking of recorder in/out times in LTSA
+(4) Split xwavs as needed when they span multiple sets or there are unexplained recording gaps
+(5) Plot TDR and spatial data for reporting
+
+This script calls the following functions: `readDataLog`, `updateRecorderKey`, `extractLTSATimes`, `summarizeSetDurations`, `findXwavGaps`, `writeSplitXwavs`, `plotSetDrifts`, `readTDRData`, `trimTDRData`, `plotTDRAll`; `defiineLogAndFrames`, `splitxwav`, `rdxwavhd_so`, `wrxwavhd_split` 
+
+#### `workflow_checkSplitAmplitudes.m`
+
+Script to compare the amplitudes of original xwavs that span the end of one set and the start of the next set (so contains a significant time gap that warrants splitting) to the newly written/split xwavs, to make sure that `writeSplitXwavs` was introducing any amplitude issues.
+
+This script calls the following functions: `xwavAmplitudeCheck`
+
+#### `workflow_compareTDRdata.m`
+
+Script to read in and plot TDR data for several trips. This was used to compare how the different recorders were sitting in the water across different trips and see if it was related to increased broadband 'banging' or 'clanking' noise that we see on some trips. 
+
+This script calls the following functions: `readTDRdata`, `plotTDRData`
+
 <sub>[Back to top](#)</sub>
 
 
