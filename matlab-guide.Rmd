@@ -1,0 +1,32 @@
+---
+title: "MATLAB Guide"
+description: |
+  Documentation for various MATLAB scripts and functions used in llamp post-processing and analyses
+favicon: docs/images/favicon.ico
+output: 
+  distill::distill_article:
+    self_contained: true
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    css: static/toc-styles.css
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE,}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.align = 'center')
+
+library(fontawesome)
+```
+
+
+To be filled in...
+
+<sub>[Back to top](#)</sub>
+
+
+
+
+## Last updated {.appendix}
+
+`r fa(name = "calendar-check")` `r format(Sys.Date(), "%d %B %Y")`
