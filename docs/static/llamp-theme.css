@@ -1,0 +1,306 @@
+
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+/* Font options: Sanchez (headers / serif), Nunito Sans (body / sans-serif) */
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+/* Code font (Roboto Mono) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+
+/* -- Define some colors -- */
+:root {
+  --color-background:   #FFFFFF;
+  --color-primary:      #220055;
+  --color-secondary:    #047C91;
+  --code-grey:          #EBEBEB;
+  --white:              #FFFFFF;
+  --dark-grey:          #575757;
+}
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:         1.6rem;
+  --body-size:          1.0rem;
+  --code-size:          0.7rem;
+  --aside-size:         0.75rem;
+  --fig-cap-size:       0.90rem;
+  /*-- Main font colors --*/
+  --title-color:        var(--color-primary);
+  --title-weight:       400
+  --header-color:       var(--color-primary);
+  --body-color:         rgba(0, 0, 0, 0.9);
+  --aside-color:        rgba(0, 0, 0, 0.6);
+  --fig-cap-color:      var(--color-secondary);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:       Open Sans;
+  --mono-font:          Roboto Mono;
+  --body-font:          Open Sans;
+  --navbar-font:        Open Sans;
+}
+
+
+/*-- ARTICLE TITLE --*/
+d-title {
+  padding-top:          4.5rem;
+  padding-bottom:       0rem;
+}
+
+d-title h1 {
+  font-size:            var(--title-size);
+}
+
+d-title p {
+  font-size:            1.2rem;
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:       0.6rem;
+  --heading-color:      rgba(0, 0, 0, 0.5);
+  --body-size:          0.8rem;
+  --body-color:         rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:       18px;
+  --contents-size:      13px;
+}
+
+.d-contents a {
+  color:                var(--dark-grey);
+}
+
+.d-contents nav a:hover {
+  color:                var(--color-secondary);
+  text-decoration:      none;
+}
+
+.d-contents nav h3 {
+  text-transform:       uppercase; 
+  margin-bottom:        0.6em;
+}
+
+/*-- ARTICLE BODY --*/
+d-article {
+  padding-top:          1rem;
+  padding-bottom:       0rem;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:       15px;
+  --heading-color:      rgba(0, 0, 0, 0.65);
+  --text-size:          0.8em;
+  --text-color:         rgba(0, 0, 0, 0.5);
+  margin-top:           20px;
+  padding-top:          1.2rem;
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:         1.2rem;
+  --text-color:         var(--white);
+  --hover-color:        var(--code-grey);
+  --text-size:          1.2rem;
+  --bkgd-color:         var(--color-primary);
+}
+
+.distill-site-header a {
+  font-weight:          lighter;
+}
+
+.distill-site-header a:hover {
+  color:                var(--dark-grey);
+  font-weight:          lighter;
+  border-bottom:        0px;
+}
+
+.nav-dropdown .nav-dropbtn {
+  color:                var(--text-color);
+  font-weight:          lighter;
+}
+
+.distill-site-header .nav-dropdown:hover .nav-dropbtn {
+  color:                var(--code-grey);
+  font-weight:          lighter;
+}
+
+.nav-dropdown-content a:hover {
+  color:                var(--hover-color, white);
+  background-color:     var(--color-secondary);
+  font-weight:          lighter;
+}
+
+
+
+.distill-site-footer {
+  --text-color:         rgba(255, 255, 255, 0.8);
+  --text-size:          15px;
+  --hover-color:        white;
+  --bkgd-color:         #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+
+/*-- SECTION HEADER STYLING --*/
+
+d-article {
+  --header-color:       var(--color-primary);
+}
+
+d-article h1 {
+  font-size:            var(--title-size);
+  letter-spacing:       1px;
+  line-height:          1.1em;
+  margin-top:           1.5rem;
+  margin-bottom:        0.5rem;
+  padding-bottom:       0.6rem;
+}
+
+d-article h2 {
+  color:                var(--dark-grey) !important;
+  font-size:            1.4rem;
+  letter-spacing:       1px;
+  line-height:          1.1em;
+  margin-top:           1.0rem;
+  margin-bottom:        0.5rem;
+  padding-bottom:       0.5rem;
+}
+
+d-article h3 {
+  font-size:            1.2rem;
+  line-height:          1.1em;
+  margin-top:           1.0rem;
+  margin-bottom:        0.5rem;
+  letter-spacing:       1px;
+}
+
+d-article h4 {
+  font-size:            1.1rem;
+  color:                var(--dark-grey) !important;
+  line-height:          1.1em;
+  margin-top:           1.0rem;
+  margin-bottom:        0.5rem;
+}
+
+d-article h5 {
+  font-size:            1.1rem;
+  font-style:           italic;
+  color:                var(--dark-grey) !important;
+  line-height:          1.1em;
+  margin-top:           0.5rem;
+  margin-bottom:        0.8rem;
+}
+
+d-article h6 {
+  font-size:            1.1rem;
+  color:                var(--dark-grey) !important;
+  line-height:          1.1em;
+  margin-top:           0.5rem;
+  margin-bottom:        0.8rem;
+  text-decoration:      underline;
+}
+
+
+/* Formatting tables (can update here or individually) */
+table, td, tr, th {
+  border-collapse:      collapse;
+  font-family:          Open Sans;
+  border:               1px solid gainsboro;
+  vertical-align:       top;
+}
+
+d-article table th, d-article table td {
+  font-size:            15px;
+  padding:              2px 8px;
+  border:               1px solid gainsboro;
+}
+
+/* ----------- LINK STYLING ----------- */
+d-article a {
+  border-bottom:        0px;
+  text-decoration:      none;
+  color:                #047C91;
+  font-weight:          bold;
+}
+
+a {
+  border-bottom:        0px;
+  text-decoration:      none;
+  color:                #047C91;
+  font-weight:          bold;
+}
+
+a:hover {
+  border-bottom:        1px solid rgba(0, 0, 0, 0.8);
+  color:                var(--dark-grey);
+  text-decoration:      none;
+}
+
+
+/* -------- CODE STYLING ----------- */
+
+d-article code {
+  font-family:          Roboto Mono;
+  background-color:     #EBEBEB;
+  color:                black;
+  border-radius:        3px;
+}
+
+/* making code chunks with scroll bar */
+d-article pre { 
+  border-radius:        3px; /* rounded chunk window*/
+  font-size:            14px; /* output text size */
+  color:                black; /* output text colour */
+  background-color:     #EBEBEB; /* output chunk background colour */
+  padding:              5px 5px 5px 18px; /* top,right,bottom,left padding values */
+  overflow:             auto !important; /* enables scroll bar */
+  max-height:           200px;
+  margin-top:           1.0rem;
+}
+
+d-article div.sourceCode pre { 
+  border-radius:        3px;
+  font-size:            14px; /* output text size */
+  color:                black;
+  background-color:     #EBEBEB;
+  padding:              5px 5px 5px 18px;
+  overflow:             auto !important;
+  max-height:           200px;
+}
+
+
+/* -------- LIST STYLING -------- */
+/* Smaller spacing in bullet lists */
+d-article li {
+  margin-bottom:        0px;
+}
+/* no bottom margin on nested lists */
+d-article ul ul {
+  margin-bottom:        0px;
+}
+d-article ul ul ul {
+  margin-bottom:        0px;
+}
+
+
+
+figure {
+    position:           relative;
+    margin-bottom:      1.5em;
+    margin-top:         1.5em;
+}
