@@ -1,5 +1,5 @@
 ---
-title: "How To for Merging Branches"
+title: "How-To for Merging Branches"
 description: |
   Guide for updating a 'personal' GitHub branch with the main branch
 favicon: docs/images/favicon.ico
@@ -38,43 +38,75 @@ When working with a code repository that may receive regular updates, but that y
 
 The best approach for this project (*I think*) is to create a new **branch** to have your own separate stream of edits for information like paths, folder structure, etc. This **'branch'** is an off-shoot of the original, which means you can pull in updates committed to the main branch of the repo but maintain your own edits. Additionally, you'll be able to make 'pull requests' to contribute any broad changes that would benefit the original (bug fixes, enhancements). But, with a branch, your changes won't automatically get updated for others and it will avoid conflicts of multiple people working within the code at once.
 
-## Updating branch - only *behind* `main`
+## Compare branches
 
-If the `main` branch has updates that you wish to encorporate into your branch, you will do this through the GitHub website. 
+To check if the `main` branch has updates that you wish to incorporate into your branch, or if your branch has updates you'd like to incorporate into `main`, use the **GitHub website**. 
 
 - Navigate to the repository of interest
 - Select *your* branch from the drop down menu on the upper left
-- GitHub will tell how many commits *ahead* and how many commits *behind* this branch is from the main branch
-- If your branch is only commits behind the main branch, updating should be fairly straightforward
+- GitHub will tell how many commits *ahead* and how many commits *behind* this branch is from the `main` branch
+- Your branch can be just *behind* (Figure \ref{ss-mba}), just *ahead* (Figure \ref{ss-maa}), or *both ahead and behind* (Figure \ref{ss-maba}) the `main` branch
 
-```{r ss-m1a, dpi = 80, fig.link = 'images/screenshot_merge_1_annotated.png', fig.cap = 'This screenshot shows the selected branch (not `main`, but in this case SFs personal branch, `picsn28`), and how it is 2 commits *behind* the main branch'}
-knitr::include_graphics('images/screenshot_merge_1_annotated.png')
+```{r ss-mba, dpi = 80, fig.link = 'images/screenshot_merge_behind_annotated.png', fig.cap = 'This screenshot shows the selected branch (not `main`, but in this case SFs personal branch, `picsn28`), and how it is 2 commits *behind* the main branch'}
+knitr::include_graphics('images/screenshot_merge_behind_annotated.png')
 ```
 
-- Click on the link with the number of commits behind (in the above screenshot, where it says '2 commits behind' in blue), to open the branch comparison page
-- The compare page will note the specific commits that are different, and check if the two branches can be merged without any conflicts (e.g., edits on the same lines in the same files)
-
-```{r ss-m2, dpi = 80, fig.link = 'images/screenshot_merge_2.png', fig.cap = 'The compare page spells out the exact changes, and checks the ability to merge'}
-knitr::include_graphics('images/screenshot_merge_2.png')
+```{r ss-maa, dpi = 80, fig.link = 'images/screenshot_merge_ahead_annotated.png', fig.cap = 'This screenshot shows the `picsn28` branch and how it is 2 commits *ahead* of the main branch'}
+knitr::include_graphics('images/screenshot_merge_ahead_annotated.png')
 ```
 
-- If there are no merge conflicts, select the green *Create pull request* button
-- Give the pull request a short description
-- In the pull request pag, there is more detailed checks, a statement about conflicts, and space to include additional comments
-
-```{r ss-m3a, dpi = 80, fig.link = 'images/screenshot_merge_3_annotated.png', fig.cap = 'This screenshot shows the pull request page, in a case with no merge conflicts'}
-knitr::include_graphics('images/screenshot_merge_3_annotated.png')
+```{r ss-maba, dpi = 80, fig.link = 'images/screenshot_merge_ahead_behind_annotated.png', fig.cap = 'This screenshot shows the `picsn28` branch that has commits both ahead and behind `main`: 1 commit *ahead* and 5 commits *behind*'}
+knitr::include_graphics('images/screenshot_merge_ahead_behind_annotated.png')
 ```
 
-- If there are no conflicts, you can select the green *Merge pull request* button and all commits from the `main` branch will be merged with the current, selected branch
-- The branch that `main` was merged with will now say that it is '1 commit ahead of main' because of this merge commit
+## Update your branch to match `main`
 
+If your branch is any commits *behind* `main`, you may want to update your branch to match `main` without losing the changes you have made (e.g., to mapped paths, etc). This is the more likely situation in the approach of using branches outlined here. 
+
+- Click on the blue link that says *## of commits behind* to open the detailed branch comparison page
+- The comparing changes page will note the specific commits that are different in `main` from your branch and will check if the two branches can be merged without any conflicts (e.g., edits that are on the same lines of the same files that don't match) or if any conflicts need to be resolved first.
+
+### No merge conflicts
+
+- If there are no merge conflicts, the comparing changes page will state *Able to merge* in green at the top (Figure \ref{ss-matm})
+- Select the green *Merge pull request* button and a new page will open
+  - Give the pull request a short description
+  - In the pull request page there are more detailed checks, a statement about conflicts, and space to add any additional comments
+- If there are no conflicts, select the green *Merge pull request button* and all commits from the `main` branch will be merged with the current, selected branch (Figure  \ref{ss-mprda})
+- The branch that `main` was merged with will now say that it is '1 commit ahead of main' because of this merge commit (or how ever many it was ahead before plus 1)
+
+```{r ss-matm, dpi = 80, fig.link = 'images/screenshot_merge_able_to_merge.png', fig.cap = 'The comparing changes page spells out the exact changes in the commits where `main` is ahead, and checks the ability to merge. In this case, there are no conflicts and so the branches are able to be merged automatically.'}
+knitr::include_graphics('images/screenshot_merge_able_to_merge.png')
+```
+
+```{r ss-mprda, dpi = 80, fig.link = 'images/screenshot_merge_pull_request_details_annotated.png', fig.cap = 'This screenshot shows the pull request page, in a case with no merge conflicts'}
+knitr::include_graphics('images/screenshot_merge_pull_request_details_annotated.png')
+```
+
+### With merge conflicts
+
+- If there are merge conflicts, they must be resolved before the pull request can be merged
+- GitHub will flag these conflicts directly in the files
+- There are a few ways to resolve these conflicts
+  - Command line - this is complicated and not recommended
+  - Web editor - this is easier to use but it ends up creating another intermediate branch which can be a little confusing as well
+  - Open the file with the conflicts directly in a text editor - this is a more manual approach but I think is the simplest
+  
+If you encounter an instance where there are merge conflicts, you can always reach out to SF to walk through it together!
+
+SF will work on screenshots for this in the future...
 
 <sub>[Back to top](#)</sub>
 
-## Updating branch - only ahead of `main`
+## Update `main` to match your branch
 
-## Updating branch - ahead and behind
+If your branch has any commits *ahead* of `main` that may be useful to other users of the code (e.g., bug fixes) you can also make a *Pull Request* to add your commits to `main`. This is less likely in the application of branches outlined here but may happen!
+
+The approach is the same as above, but instead click on the blue link with the *## of commits ahead* to open the detailed branch comparison page, but in this case to bring commits from your branch to `main`. 
+
+If there are [no merge conflicts](#no-merge-conflicts), the pull request can be created and merged automatically. If there are [merge conflicts present](#with-merge-conflicts), they must be resolved before the pull request can be completed. 
+
+<sub>[Back to top](#)</sub>
 
 
 ## Last updated {.appendix}
