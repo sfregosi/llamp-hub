@@ -45,7 +45,7 @@ To check if the `main` branch has updates that you wish to incorporate into your
 - Navigate to the repository of interest
 - Select *your* branch from the drop down menu on the upper left
 - GitHub will tell how many commits *ahead* and how many commits *behind* this branch is from the `main` branch
-- Your branch can be just *behind* (Figure \ref{ss-mba}), just *ahead* (Figure \ref{ss-maa}), or *both ahead and behind* (Figure \ref{ss-maba}) the `main` branch
+- Your branch can be just *behind* (Figure \@ref(fig:ss-mba)), just *ahead* (Figure \@ref(fig:ss-maa)), or *both ahead and behind* (Figure \@ref(fig:ss-maba)) the `main` branch
 
 ```{r ss-mba, dpi = 80, fig.link = 'images/screenshot_merge_behind_annotated.png', fig.cap = 'This screenshot shows the selected branch (not `main`, but in this case SFs personal branch, `picsn28`), and how it is 2 commits *behind* the main branch'}
 knitr::include_graphics('images/screenshot_merge_behind_annotated.png')
@@ -68,12 +68,13 @@ If your branch is any commits *behind* `main`, you may want to update your branc
 
 ### No merge conflicts
 
-- If there are no merge conflicts, the comparing changes page will state *Able to merge* in green at the top (Figure \ref{ss-matm})
+- If there are no merge conflicts, the comparing changes page will state *Able to merge* in green at the top (Figure \@ref(fig:ss-matm))
 - Select the green *Merge pull request* button and a new page will open
   - Give the pull request a short description
   - In the pull request page there are more detailed checks, a statement about conflicts, and space to add any additional comments
-- If there are no conflicts, select the green *Merge pull request button* and all commits from the `main` branch will be merged with the current, selected branch (Figure  \ref{ss-mprda})
+- If there are no conflicts, select the green *Merge pull request button* and all commits from the `main` branch will be merged with the current, selected branch (Figure \@ref(fig:ss-mprda))
 - The branch that `main` was merged with will now say that it is '1 commit ahead of main' because of this merge commit (or how ever many it was ahead before plus 1)
+- Now, return to GitHub Desktop and *Fetch origin* for your branch. This will pull the newly merged changes from the remote (web) to your local branch
 
 ```{r ss-matm, dpi = 80, fig.link = 'images/screenshot_merge_able_to_merge.png', fig.cap = 'The comparing changes page spells out the exact changes in the commits where `main` is ahead, and checks the ability to merge. In this case, there are no conflicts and so the branches are able to be merged automatically.'}
 knitr::include_graphics('images/screenshot_merge_able_to_merge.png')
@@ -81,6 +82,22 @@ knitr::include_graphics('images/screenshot_merge_able_to_merge.png')
 
 ```{r ss-mprda, dpi = 80, fig.link = 'images/screenshot_merge_pull_request_details_annotated.png', fig.cap = 'This screenshot shows the pull request page, in a case with no merge conflicts'}
 knitr::include_graphics('images/screenshot_merge_pull_request_details_annotated.png')
+```
+
+### With stashed changes
+
+If you have uncommitted changes locally (meaning they appear in the left panel of GitHub Desktop), but merge `main` with your local branch on GitHub.com, when you go to *Pull* these merged changes, you may get an error about conflicts with your uncommitted changes (see Figure \@ref(fig:ss-me1)). 
+
+GitHub Desktop offers to 'stash' your changes while it fetches the new remote changes, and then you can address any conflicts. To do this:
+
+- Select *Stash changes and continue*. Your changes will still be saved, but the new remote files will update locally
+- After the fetch is complete, re-open your stashed changes from the lower portion of the left hand panel
+- Conflicts with the new remote change and your stashed changes will be identified in the file the same way as merge conflicts - with a series of `<<<<<< ======= and >>>>>>>` highlight the differences. 
+- Open the file in the program it was written in (e.g., R or MATLAB) or a text editor and use the indicators to select the final version of various lines you want to keep
+- Commit your changes and push to the remote! 
+
+```{r ss-me1, dpi = 80, fig.link = 'images/screenshot_merge_error_1.png', fig.cap = 'Screenshot showing the error you may get if you merge a branch on the remote, but have uncommited changes locally.'}
+knitr::include_graphics('images/screenshot_merge_error_1.png')
 ```
 
 ### With merge conflicts
@@ -95,6 +112,9 @@ knitr::include_graphics('images/screenshot_merge_pull_request_details_annotated.
 If you encounter an instance where there are merge conflicts, you can always reach out to SF to walk through it together!
 
 SF will work on screenshots for this in the future...
+
+
+
 
 <sub>[Back to top](#)</sub>
 
