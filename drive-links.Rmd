@@ -56,6 +56,8 @@ Record of trip numbers, vessels, and captain/owner/observer contact information.
 
 ### Data processing
 
+[**LLHARP HRP Backups**](https://docs.google.com/spreadsheets/d/16aIkJfPqq94hz4YEvprz22VHSFv5qaCtD_EPbUW39wI/edit#gid=0)
+
 *old protocol* [**LLHARP Part II - Data Processing**](https://docs.google.com/document/d/1po1G2isgSCfYWc1dj8XphotPeZuOZ22ugL5wsc9o3JY/edit){target='_blank'} Google Doc *9 August 2022*
 
 ### Analysis
