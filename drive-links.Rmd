@@ -51,12 +51,14 @@ Record of trip numbers, vessels, and captain/owner/observer contact information.
 
 [**Instructions for Deployment Set-Up and Recovery**](https://docs.google.com/document/d/1EksOga_cyEPW9utMeLDw1ErR-eTIEvCzoO8l2v_Onrg/edit#heading=h.zdtttamxmx79){target='_blank'}: This is a very thorough protocol document that can be eventually converted to Rmd. Last updated *13 August 2021*
 
+[**Troubleshooting Summary Doc shared with SIO**](https://docs.google.com/document/d/1VaJQlknjIiEtjfI_2LKnGcuWkGvAV4vtTPQcuvln6Xg/edit){target='_blank'}: Out-of-date but possibly useful document on HARP and LLHARP issues, timelines, and possible solutions. 
+
 *old protocol* [**LLHARP Part I - Setup, Deploy, Recover.doc**](https://docs.google.com/document/d/0BxY-_FjiYpOqN3lmUHJyZ0JIbzQ/edit?rtpof=true&resourcekey=0-0lrFjbKIafQhui1ttAzwag){target='_blank'}: Older protocol, last updated *17 March 2017*
 
 
 ### Data processing
 
-[**LLHARP HRP Backups**](https://docs.google.com/spreadsheets/d/16aIkJfPqq94hz4YEvprz22VHSFv5qaCtD_EPbUW39wI/edit#gid=0)
+[**LLHARP HRP Backups**](https://docs.google.com/spreadsheets/d/16aIkJfPqq94hz4YEvprz22VHSFv5qaCtD_EPbUW39wI/edit#gid=0){target='_blank'}: Tracking sheet for locations of physical backups of LLHARP HRPs. 
 
 *old protocol* [**LLHARP Part II - Data Processing**](https://docs.google.com/document/d/1po1G2isgSCfYWc1dj8XphotPeZuOZ22ugL5wsc9o3JY/edit){target='_blank'} Google Doc *9 August 2022*
 
