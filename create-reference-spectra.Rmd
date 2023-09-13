@@ -1,0 +1,80 @@
+---
+title: "How-to - Create species reference spectra"
+description: |
+  Protocol/how-to document for making reference spectra of species-specific echolocation clicks
+favicon: docs/images/favicon.ico
+output: 
+  distill::distill_article:
+    self_contained: true
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    css: static/toc-styles.css
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE,}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.align = 'center')
+
+library(fontawesome)
+library(xaringanExtra)
+library(htmltools)
+```
+
+```{r, xaringanExtra-clipboard, echo=FALSE}
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clone fa-2x\" style=\"color: #301e64\"></i>",
+    success_text = "<i class=\"fa fa-check fa-2x\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times fa-2x\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+# Select candidate clicks/events
+
+## Subheader
+
+[link](https://url.com)
+
+Start of bulleted list:
+
+- item 1 *make it italic*
+- item 2 **make it bold**
+
+<sub>[Back to top](#)</sub>
+
+
+
+# Do some stuff in PAMpal
+
+#### Smaller header
+```
+this line looks like code
+```
+
+And just this `word` looks like code. 
+
+Here's a screenshot with a caption:
+
+```{r ss-partitions, dpi = 60, fig.link='images/screenshot_imaging-HRP_view-partitions.png', fig.cap = 'Screenshot showing output for listing the partitions'}
+knitr::include_graphics('images/screenshot_imaging-HRP_view-partitions.png')
+```
+
+#### Nested list 
+
+- This bullet list
+  - has nested
+    - items
+    - and
+  - stuff
+
+<sub>[Back to top](#)</sub>
+
+
+## Last Updated {.appendix}
+
+`r fa(name = "calendar-check")` `r format(Sys.Date(), "%d %B %Y")`
+
+
