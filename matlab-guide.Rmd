@@ -19,9 +19,9 @@ knitr::opts_chunk$set(fig.align = 'center')
 library(fontawesome)
 ```
 
+**_Not complete!!_**
 
-To be filled in...
-
+## Scripts
 Scripts are differentiated from functions because they typically start with `workflow_` in the file name. 
 
 
@@ -50,7 +50,41 @@ This script calls the following functions: `readTDRdata`, `plotTDRData`
 
 <sub>[Back to top](#)</sub>
 
+## Functions
 
+`defineLogAndFrames` - look up log time (based on project phase) and number of frames used on this trip
+
+`extractLTSATimes` - extract recording duration info from in/out times manually marked in LTSA
+
+`findXwavGaps` - identify timing gaps in xwavs
+
+`plotSetDrifts`
+
+`plotTDRAll`
+
+`plotTDRData`
+
+`rdxwavhd_so`
+
+`readDataLog`
+
+`readTDRData`
+
+`splitxwav`
+
+`summarizeSetDurations`
+
+`trimTDRData`
+
+`updateRecorderKey`
+
+`writeSplitXwavs`
+
+`writeXwavsNewTime`
+
+`wrxwavhd_split`
+
+`xwavAmplitudeCheck`
 
 
 ## Last updated {.appendix}
