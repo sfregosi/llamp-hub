@@ -2703,9 +2703,11 @@ Other
 <ul>
 <li><a href="#scripts" id="toc-scripts">Scripts</a>
 <ul>
-<li><a href="#workflow_processtrip.m" id="toc-workflow_processtrip.m"><code>workflow_processTrip.m</code></a></li>
 <li><a href="#workflow_checksplitamplitudes.m" id="toc-workflow_checksplitamplitudes.m"><code>workflow_checkSplitAmplitudes.m</code></a></li>
 <li><a href="#workflow_comparetdrdata.m" id="toc-workflow_comparetdrdata.m"><code>workflow_compareTDRdata.m</code></a></li>
+<li><a href="#workflow_fixtimeoffset.m" id="toc-workflow_fixtimeoffset.m"><code>workflow_fixTimeOffset.m</code></a></li>
+<li><a href="#workflow_prepmeanspectra.m" id="toc-workflow_prepmeanspectra.m"><code>workflow_prepMeanSpectra.m</code></a></li>
+<li><a href="#workflow_processtrip.m" id="toc-workflow_processtrip.m"><code>workflow_processTrip.m</code></a></li>
 </ul></li>
 <li><a href="#functions" id="toc-functions">Functions</a></li>
 <li><a href="#last-updated" id="toc-last-updated">Last updated</a></li>
@@ -2715,6 +2717,18 @@ Other
 <p><strong><em>Not complete!!</em></strong></p>
 <h2 id="scripts">Scripts</h2>
 <p>Scripts are differentiated from functions because they typically start with <code>workflow_</code> in the file name.</p>
+<h4 id="workflow_checksplitamplitudes.m"><code>workflow_checkSplitAmplitudes.m</code></h4>
+<p>Script to compare the amplitudes of original xwavs that span the end of one set and the start of the next set (so contains a significant time gap that warrants splitting) to the newly written/split xwavs, to make sure that <code>writeSplitXwavs</code> was introducing any amplitude issues.</p>
+<p>This script calls the following functions: <code>xwavAmplitudeCheck</code></p>
+<h4 id="workflow_comparetdrdata.m"><code>workflow_compareTDRdata.m</code></h4>
+<p>Script to read in and plot TDR data for several trips. This was used to compare how the different recorders were sitting in the water across different trips and see if it was related to increased broadband ‘banging’ or ‘clanking’ noise that we see on some trips.</p>
+<p>This script calls the following functions: <code>readTDRdata</code>, <code>plotTDRData</code></p>
+<h4 id="workflow_fixtimeoffset.m"><code>workflow_fixTimeOffset.m</code></h4>
+<p>Script to adjust a programmed time error (1 hr off) in LL067 FR51_DL64. Read in existing xwavs and re-wrote them (including re-writing the xwav header) with the correct time.</p>
+<p>This script calls the following functions: <code>writeXwavsNewTime</code></p>
+<h4 id="workflow_prepmeanspectra.m"><code>workflow_prepMeanSpectra.m</code></h4>
+<p>Script to modify ‘meanSpecXx.mat’ files provided by SIO to be used in R. A column for frequency is added, and the spectrum data are saved as a .csv.</p>
+<p>No <code>llamp</code> functions are used in this script.</p>
 <h4 id="workflow_processtrip.m"><code>workflow_processTrip.m</code></h4>
 <p>Script to complete various post-processing steps for a longline trip. Has 5 main components:</p>
 <ol type="1">
@@ -2725,33 +2739,27 @@ Other
 <li>Plot TDR and spatial data for reporting</li>
 </ol>
 <p>This script calls the following functions: <code>readDataLog</code>, <code>updateRecorderKey</code>, <code>extractLTSATimes</code>, <code>summarizeSetDurations</code>, <code>findXwavGaps</code>, <code>writeSplitXwavs</code>, <code>plotSetDrifts</code>, <code>readTDRData</code>, <code>trimTDRData</code>, <code>plotTDRAll</code>; <code>defiineLogAndFrames</code>, <code>splitxwav</code>, <code>rdxwavhd_so</code>, <code>wrxwavhd_split</code></p>
-<h4 id="workflow_checksplitamplitudes.m"><code>workflow_checkSplitAmplitudes.m</code></h4>
-<p>Script to compare the amplitudes of original xwavs that span the end of one set and the start of the next set (so contains a significant time gap that warrants splitting) to the newly written/split xwavs, to make sure that <code>writeSplitXwavs</code> was introducing any amplitude issues.</p>
-<p>This script calls the following functions: <code>xwavAmplitudeCheck</code></p>
-<h4 id="workflow_comparetdrdata.m"><code>workflow_compareTDRdata.m</code></h4>
-<p>Script to read in and plot TDR data for several trips. This was used to compare how the different recorders were sitting in the water across different trips and see if it was related to increased broadband ‘banging’ or ‘clanking’ noise that we see on some trips.</p>
-<p>This script calls the following functions: <code>readTDRdata</code>, <code>plotTDRData</code></p>
 <p><sub><a href="#">Back to top</a></sub></p>
 <h2 id="functions">Functions</h2>
 <p><code>defineLogAndFrames</code> - look up log time (based on project phase) and number of frames used on this trip</p>
 <p><code>extractLTSATimes</code> - extract recording duration info from in/out times manually marked in LTSA</p>
 <p><code>findXwavGaps</code> - identify timing gaps in xwavs</p>
-<p><code>plotSetDrifts</code></p>
-<p><code>plotTDRAll</code></p>
-<p><code>plotTDRData</code></p>
-<p><code>rdxwavhd_so</code></p>
-<p><code>readDataLog</code></p>
-<p><code>readTDRData</code></p>
-<p><code>splitxwav</code></p>
-<p><code>summarizeSetDurations</code></p>
-<p><code>trimTDRData</code></p>
-<p><code>updateRecorderKey</code></p>
-<p><code>writeSplitXwavs</code></p>
-<p><code>writeXwavsNewTime</code></p>
-<p><code>wrxwavhd_split</code></p>
-<p><code>xwavAmplitudeCheck</code></p>
+<p><code>plotSetDrifts</code> - plot location of each phase of each set (set start/end, recorders in/out, haul start/end)</p>
+<p><code>plotTDRAll</code> - plot TDR data for four simultaneously deployed recorders in a four panel figure</p>
+<p><code>plotTDRData</code> - plot simple depth profile for single recorder</p>
+<p><code>rdxwavhd_so</code> - standalone function (for use outside Trition) for reading xwav headers. Modified from SMW Triton version to work with LLHARPs</p>
+<p><code>readDataLog</code> - read and reformat observer data (set/haul/recorder timing and location data) that has been transcribed to an Excel sheet into a long-form MATLAB table</p>
+<p><code>readTDRData</code> - read in TDR .csv, adjusting by timezone if needed</p>
+<p><code>splitxwav</code> - write a ‘split’, or shorter, xwav based on an exisiting xwav but only containing the specified raw files; for use when an xwav has a gap in time between raw files</p>
+<p><code>summarizeSetDurations</code> - calculate durations of each set phase and recorder deployment, based both on observer recorded times and from the acoustic record</p>
+<p><code>trimTDRData</code> - trim TDR data to only times when recorders are actually deployed; trimming is based on observer recorderd Set Begin and Haul End times, <em>not</em> TDR wet/dry sensor</p>
+<p><code>updateRecorderKey</code> - manually input recorder frame and data logger combinations for a trip, updating a .mat file ‘key’ that can be read in and used elsewhere</p>
+<p><code>writeSplitXwavs</code> - batch ‘setup’ and processing that runs <code>splitxwav</code> for a whole folder of xwavs; splits xwavs based on gaps between raw files</p>
+<p><code>writeXwavsNewTime</code> - rewrite xwavs with updated header and filename timestamp to correct time based on known offset</p>
+<p><code>wrxwavhd_split</code> - write xwav header for specified raw files only, used by <code>writeSplitXwavs</code> and <code>splitxwav</code></p>
+<p><code>xwavAmplitudeCheck</code> - generate plots of file amplitude as two panels for direct comparison</p>
 <h2 class="appendix" id="last-updated">Last updated</h2>
-<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M128 0c13.3 0 24 10.7 24 24V64H296V24c0-13.3 10.7-24 24-24s24 10.7 24 24V64h40c35.3 0 64 28.7 64 64v16 48V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V192 144 128C0 92.7 28.7 64 64 64h40V24c0-13.3 10.7-24 24-24zM400 192H48V448c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V192zM329 297L217 409c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47 95-95c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> 28 September 2023</p>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M128 0c13.3 0 24 10.7 24 24V64H296V24c0-13.3 10.7-24 24-24s24 10.7 24 24V64h40c35.3 0 64 28.7 64 64v16 48V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V192 144 128C0 92.7 28.7 64 64 64h40V24c0-13.3 10.7-24 24-24zM400 192H48V448c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V192zM329 297L217 409c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47 95-95c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> 06 October 2023</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
