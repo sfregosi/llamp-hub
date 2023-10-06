@@ -24,6 +24,33 @@ library(fontawesome)
 ## Scripts
 Scripts are differentiated from functions because they typically start with `workflow_` in the file name. 
 
+#### `workflow_checkSplitAmplitudes.m`
+
+Script to compare the amplitudes of original xwavs that span the end of one set and the start of the next set (so contains a significant time gap that warrants splitting) to the newly written/split xwavs, to make sure that `writeSplitXwavs` was introducing any amplitude issues.
+
+This script calls the following functions: `xwavAmplitudeCheck`
+
+
+#### `workflow_compareTDRdata.m`
+
+Script to read in and plot TDR data for several trips. This was used to compare how the different recorders were sitting in the water across different trips and see if it was related to increased broadband 'banging' or 'clanking' noise that we see on some trips. 
+
+This script calls the following functions: `readTDRdata`, `plotTDRData`
+
+
+#### `workflow_fixTimeOffset.m`
+
+Script to adjust a programmed time error (1 hr off) in LL067 FR51_DL64. Read in existing xwavs and re-wrote them (including re-writing the xwav header) with the correct time. 
+
+This script calls the following functions: `writeXwavsNewTime`
+
+
+#### `workflow_prepMeanSpectra.m`
+
+Script to modify 'meanSpecXx.mat' files provided by SIO to be used in R. A column for frequency is added, and the spectrum data are saved as a .csv. 
+
+No `llamp` functions are used in this script. 
+
 
 #### `workflow_processTrip.m`
 Script to complete various post-processing steps for a longline trip. Has 5 main components: 
@@ -36,18 +63,6 @@ Script to complete various post-processing steps for a longline trip. Has 5 main
 
 This script calls the following functions: `readDataLog`, `updateRecorderKey`, `extractLTSATimes`, `summarizeSetDurations`, `findXwavGaps`, `writeSplitXwavs`, `plotSetDrifts`, `readTDRData`, `trimTDRData`, `plotTDRAll`; `defiineLogAndFrames`, `splitxwav`, `rdxwavhd_so`, `wrxwavhd_split` 
 
-#### `workflow_checkSplitAmplitudes.m`
-
-Script to compare the amplitudes of original xwavs that span the end of one set and the start of the next set (so contains a significant time gap that warrants splitting) to the newly written/split xwavs, to make sure that `writeSplitXwavs` was introducing any amplitude issues.
-
-This script calls the following functions: `xwavAmplitudeCheck`
-
-#### `workflow_compareTDRdata.m`
-
-Script to read in and plot TDR data for several trips. This was used to compare how the different recorders were sitting in the water across different trips and see if it was related to increased broadband 'banging' or 'clanking' noise that we see on some trips. 
-
-This script calls the following functions: `readTDRdata`, `plotTDRData`
-
 <sub>[Back to top](#)</sub>
 
 ## Functions
@@ -58,33 +73,33 @@ This script calls the following functions: `readTDRdata`, `plotTDRData`
 
 `findXwavGaps` - identify timing gaps in xwavs
 
-`plotSetDrifts`
+`plotSetDrifts` - plot location of each phase of each set (set start/end, recorders in/out, haul start/end)
 
-`plotTDRAll`
+`plotTDRAll` - plot TDR data for four simultaneously deployed recorders in a four panel figure
 
-`plotTDRData`
+`plotTDRData` - plot simple depth profile for single recorder
 
-`rdxwavhd_so`
+`rdxwavhd_so` - standalone function (for use outside Trition) for reading xwav headers. Modified from SMW Triton version to work with LLHARPs
 
-`readDataLog`
+`readDataLog` - read and reformat observer data (set/haul/recorder timing and location data) that has been transcribed to an Excel sheet into a long-form MATLAB table 
 
-`readTDRData`
+`readTDRData` - read in TDR .csv, adjusting by timezone if needed
 
-`splitxwav`
+`splitxwav` - write a 'split', or shorter, xwav based on an exisiting xwav but only containing the specified raw files; for use when an xwav has a gap in time between raw files
 
-`summarizeSetDurations`
+`summarizeSetDurations` - calculate durations of each set phase and recorder deployment, based both on observer recorded times and from the acoustic record
 
-`trimTDRData`
+`trimTDRData` - trim TDR data to only times when recorders are actually deployed; trimming is based on observer recorderd Set Begin and Haul End times, *not* TDR wet/dry sensor
 
-`updateRecorderKey`
+`updateRecorderKey` - manually input recorder frame and data logger combinations for a trip, updating a .mat file 'key' that can be read in and used elsewhere
 
-`writeSplitXwavs`
+`writeSplitXwavs` - batch 'setup' and processing that runs `splitxwav` for a whole folder of xwavs; splits xwavs based on gaps between raw files
 
-`writeXwavsNewTime`
+`writeXwavsNewTime` - rewrite xwavs with updated header and filename timestamp to correct time based on known offset
 
-`wrxwavhd_split`
+`wrxwavhd_split` - write xwav header for specified raw  files only, used by `writeSplitXwavs` and `splitxwav`
 
-`xwavAmplitudeCheck`
+`xwavAmplitudeCheck` - generate plots of file amplitude as two panels for direct comparison
 
 
 ## Last updated {.appendix}
