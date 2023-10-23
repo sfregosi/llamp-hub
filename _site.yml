@@ -35,6 +35,14 @@ navbar:
         href: drive-links.html
       - text: "Project overview"
         href: project-overview.html
+      - text: "Help docs"
+        menu:
+        - text: "Matlab code guide"
+          href: matlab-guide.html
+        - text: "Rmarkdown help"
+          href: rmd-help.html
+        - text: "How-to GitHub branch merge"
+          href: branch-merge.html
  #     - text: "2022 Manuscript - Data Guide"
  #       href: simonis_data_guide.html
  #     - text: "2022 Manuscript - Comparison"
