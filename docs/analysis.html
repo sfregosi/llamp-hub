@@ -2704,9 +2704,9 @@ Other
 </button>
 <div class="nav-dropdown-content">
 <a href="summary.html">Summary</a>
-<a href="drive-links.html">Drive links</a>
 <a href="project-overview.html">Project overview</a>
-<span class="nav-dropdown-header">Help docs</span>
+<a href="drive-links.html">Drive links</a>
+<span class="nav-dropdown-header">Helper docs</span>
 </div>
 </div>
 <a href="https://github.com/sfregosi/llamp-hub">
@@ -2758,7 +2758,6 @@ Other
 </ul></li>
 <li><a href="#classification" id="toc-classification">Classification</a>
 <ul>
-<li><a href="#cloning-code" id="toc-cloning-code">Cloning code</a></li>
 <li><a href="#running-classification" id="toc-running-classification">Running classification</a></li>
 </ul></li>
 </ul></li>
@@ -3071,41 +3070,11 @@ Figure 5: Screenshot showing the correct configuration for the binary storage fo
 <p><sub><a href="#">Back to top</a></sub></p>
 <h3 id="classification">Classification</h3>
 <p>The clicks, burst pulses, and whistles detected using Pamguard are grouped by event (from the manual annotation) and exported by R package <code>PAMpal</code>, then fed into the classification R package <code>banter</code> to try to identify which encounters were possibly FKW and which were likely other odontocete species.</p>
-<h4 id="cloning-code">Cloning code</h4>
 <p>Classification code is located in the <a href="https://github.com/sfregosi/llamp">llamp</a> repository in the <a href="https://github.com/sfregosi/llamp/tree/main/R">R folder</a>.</p>
 <p>Because this code may be regularly updated, it is best to work directly with it using GitHub/GitHub Desktop. If you plan to make modifications to the code (for example, updating paths to a specific machine or workflow) then it is best to make a new <strong>‘branch’</strong> on this repository to have your own separate stream of edits. This <strong>‘branch’</strong> is an off-shoot of the original so you’ll be able to pull in updates committed to the original repo, and you’ll be able to make ‘pull requests’ to contribute any more broad changes to the original. But, with a branch, your changes won’t automatically get updated for others and it will avoid conflicts of multiple people working within the code at once. <em>Creating a branch is only possible if you are a collaborator in the repository; if not, you can ‘fork’ the repository and still stay up-to-date with changes as well as make pull-requests.</em></p>
-<p>The classification process also requires some functions located in the <a href="https://github.com/sfregosi/CRPTools">CRPTools</a> repository. This repository only needs to be cloned to your local machine (first section below) because it will not be modified for a particular computer.</p>
-<p>Below are suggested steps for cloning, creating a new branch, and working with GitHub/GitHub Desktop.</p>
-<p><strong>To clone a repository:</strong></p>
-<ul>
-<li>Open GitHub Desktop</li>
-<li>Select <em>File</em> &gt; <em>Clone repository…</em></li>
-<li>Select the <em>URL</em> tab and paste <code>https://github.com/sfregosi/llamp</code> into the empty URL space</li>
-<li>Specify the location to save the repository on your local machine (suggest <code>documents\github\llamp</code>) and hit <em>Clone</em></li>
-<li>This will copy all the <code>llamp</code> components to the specified folder</li>
-<li>Select this repository within GitHub Desktop from the <em>Current repository</em> drop down repository list on the left side</li>
-</ul>
-<p><strong>To create a new branch:</strong></p>
-<ul>
-<li>The default/primary branch is called <code>main</code>. In the <em>Current branch</em> drop down, select <em>New branch</em> and provide the branch a name (e.g., <code>fregosi</code> or <code>picsn28</code> - the name of your computer)</li>
-<li>This will create a new branch and and it’s name should now appear in the <em>Current branch</em> section in GitHub Desktop</li>
-<li>Whenever you want to switch between branches, you select it from this drop down in GitHub Desktop. But, once one branch is selected, it should remain the chosen branch through computer restarts, etc, but it is always good to double check if making major changes!</li>
-<li>Finally, hit <em>Publish this branch</em> to push this branch to the ‘remote’ location of this repository on github.com. This will only need to be done once after creating a new branch</li>
-</ul>
-<p><strong>Committing, pushing, and pulling changes:</strong></p>
-<ul>
-<li>Whenever you make changes to code on your local machine, these changed files will appear in the left side panel of GitHub Desktop. After making a set of specific changes, you can create a <em>snapshot</em> of the files at that point in time (so you can go back if something bad happens, or others can easily track what was changed – the purpose of version control!) by making a <strong>‘commit’</strong> for these changes. Do so by typing a short message/description in the lower left and hitting <em>Commit</em></li>
-<li>After committing changes, those changes have been saved on your local repository and branch, but ONLY locally. After making a commit, or several commits (e.g, at the end of the day), <strong>‘push’</strong> these changes to the remote repository on Github.com using the <em>Push origin</em> button on the top right of GitHub Desktop</li>
-<li>The top-right will display different options depending on what changes are available
-<ul>
-<li>If there are local changes, it will display <em>Push origin</em>; it is good practice to push all commits at the end of each day or session working with a particular code set</li>
-<li>If there are no local changes, it will say <em>Fetch origin</em>, which will check for new changes from the web</li>
-<li>If there are changes present on the remote that are not yet local, it will say <em>Pull origin</em></li>
-<li>It is good practice to fetch and pull changes at the start of each day or session to avoid any conflicts of files being changed simultaneously in two locations. If you are working within your own branch, you will be the only one making changes so there won’t really be unexpected changes to be pulled from the web. But, if you are working within the same branch as others, or with code that you are not modifying but others are regularly updating, this becomes more critical</li>
-</ul></li>
-</ul>
-<p><strong>Merging/updating branches</strong></p>
-<p>See this other page: <a href="branch-merge.html">branch-merge</a></p>
+<p><strong>The <a href="how-to-github.html">How-to GitHub</a> page has suggested steps for cloning, creating a new branch, committing, pushing, pulling edits, and merging branches in GitHub.</strong></p>
+<p>The classification process also requires some functions located in the <a href="https://github.com/sfregosi/CRPTools">CRPTools</a> repository. This repository only needs to be cloned to your local machine (<a href="how-to-github.html/#clone-a-repository">Clone a repository</a> section of <a href="how-to-github.html">How-to GitHub</a>) because it will not be modified for a particular computer.</p>
+<p><sub><a href="#">Back to top</a></sub></p>
 <h4 id="running-classification">Running classification</h4>
 <p>Use the <code>workflow_fkw_predict_phase3.R</code> script to process, the manual events, Pamguard detections, and predict species ID with an existing classification model.</p>
 <ul>
@@ -3183,7 +3152,7 @@ Figure 7: Screenshot showing the data model for the pam20207b_llharp_noise.psfx 
 - This is the approach used in Bayless et al. 2017</p>
 <p><sub><a href="#">Back to top</a></sub></p>
 <h2 class="appendix" id="last-updated">Last updated</h2>
-<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M128 0c13.3 0 24 10.7 24 24V64H296V24c0-13.3 10.7-24 24-24s24 10.7 24 24V64h40c35.3 0 64 28.7 64 64v16 48V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V192 144 128C0 92.7 28.7 64 64 64h40V24c0-13.3 10.7-24 24-24zM400 192H48V448c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V192zM329 297L217 409c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47 95-95c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> 24 October 2023</p>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M128 0c13.3 0 24 10.7 24 24V64H296V24c0-13.3 10.7-24 24-24s24 10.7 24 24V64h40c35.3 0 64 28.7 64 64v16 48V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V192 144 128C0 92.7 28.7 64 64 64h40V24c0-13.3 10.7-24 24-24zM400 192H48V448c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V192zM329 297L217 409c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47 95-95c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg> 17 January 2024</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
