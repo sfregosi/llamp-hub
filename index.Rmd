@@ -12,18 +12,20 @@ library(fontawesome)
 ```
 
 ### About *this site*
-This repo is Longline Acoustic Monitoring Project Hub - a central location for documentation and guides to data organization.
+This [repo](https://github.com/sfregosi/llamp-hub) is the **Longline Acoustic Monitoring Project Hub** - a central location for documentation and guides to data organization.
 
 The web address for this repository is: [sfregosi.github.io/llamp-hub](https://sfregosi.github.io/llamp-hub){target='_blank'}
 
-This repository and site are *public*, but a more extensive *private*  [llamp](https://github.com/sfregosi/llamp) repository contains additional code and analyses. 
+This repository and site are *public*, but a more extensive *private*   repository ([llamp](https://github.com/sfregosi/llamp)) contains additional code and analyses. 
 
 ##### Site Contents
-[**Summary**](summary.html) - High level summary of work conducted so far
+[**Summary**](summary.html) - High level summary of work conducted so far & [**Project Overview**](project-overview.html) that outlines the main components of LLAMP
 
-**Protocols** - Top left menu to detailed protocols for specific components/steps of the project: vessel recruitment, hardware, data processing, analysis, and reporting. 
+**Protocols** - Top right menu to detailed protocols for specific components/steps of the project: [vessel fascilitation](vessels.html), [hardware](hardware.html), [data processing](processing.html), [analysis](analysis.html), and [reporting](reporting.html). 
 
-[**Drive docs**](drive-links.html) - links and descriptions of important docs and sheets on Google Drive. Access to individual links is restricted based on Google Drive sharing settings. 
+[**Drive links**](drive-links.html) - Links and descriptions of important docs and sheets on Google Drive. Access to individual links is restricted based on Google Drive sharing settings. 
+
+[**Helper docs**](helper-docs.html) - Links to several how-to guides with additional detail on some coding, version control, or background processes.
 
 <!-- **2022 Manuscript** - Menu to a [Data Guide](simonis_data_guide.html) for finding relevant analysis outputs on GDrive and a [Comparison](bayless_simonis_comp.html) doc for comparison of charter results to Bayless et al. 2017 -->
 
@@ -32,7 +34,7 @@ This repository and site are *public*, but a more extensive *private*  [llamp](h
 ---
 
 ### About *this project*
-The Longline Acoustic Monitoring Project (recently dubbed LLAMP) is a collaborative project between NOAA NMFS PIFSC and the Hawaiian longline fleet to better understand how and why false killer whales interact with the fishery, and try to reduce these interactions. 
+The Longline Acoustic Monitoring Project (dubbed LLAMP) is a collaborative project between NOAA NMFS PIFSC and the Hawaiian longline fleet to better understand how and why false killer whales interact with the fishery, and try to reduce these interactions. 
 
 This project has been going on for many years and involves many wonderful people! 
 

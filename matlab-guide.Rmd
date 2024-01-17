@@ -1,7 +1,7 @@
 ---
 title: "MATLAB Guide"
 description: |
-  Documentation for various MATLAB scripts and functions used in llamp post-processing and analyses
+  Detailed documentation for various MATLAB scripts and functions used in llamp post-processing and analyses
 favicon: docs/images/favicon.ico
 output: 
   distill::distill_article:
@@ -18,8 +18,6 @@ knitr::opts_chunk$set(fig.align = 'center')
 
 library(fontawesome)
 ```
-
-**_Not complete!!_**
 
 ## Scripts
 Scripts are differentiated from functions because they typically start with `workflow_` in the file name. 
@@ -38,6 +36,12 @@ Script to read in and plot TDR data for several trips. This was used to compare 
 This script calls the following functions: `readTDRdata`, `plotTDRData`
 
 
+#### `workflow_estimateDistances.m`
+
+Script to caculate approximate distances between vessel and recorders to be used in any sound propagation analyses. It calculates the pairwise distances between the recorders and the vessel at each 'event' including Set End, Haul Begin, and each recorders In/Out time and location. It also interpolates recorder and vessel locations every 30 minutes (between actual in/out locations noted on data sheets) and calculates the pairwise distances at these interpolated locations. 
+
+No additional `llamp`-specific functions are used in this script. 
+
 #### `workflow_fixTimeOffset.m`
 
 Script to adjust a programmed time error (1 hr off) in LL067 FR51_DL64. Read in existing xwavs and re-wrote them (including re-writing the xwav header) with the correct time. 
@@ -49,7 +53,7 @@ This script calls the following functions: `writeXwavsNewTime`
 
 Script to modify 'meanSpecXx.mat' files provided by SIO to be used in R. A column for frequency is added, and the spectrum data are saved as a .csv. 
 
-No `llamp` functions are used in this script. 
+No `llamp`-specific functions are used in this script. 
 
 
 #### `workflow_processTrip.m`

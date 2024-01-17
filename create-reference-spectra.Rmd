@@ -1,5 +1,5 @@
 ---
-title: "How-to - Create species reference spectra"
+title: "How-to for Creating Species Reference Spectra"
 description: |
   Protocol/how-to document for making reference spectra of species-specific echolocation clicks
 favicon: docs/images/favicon.ico

@@ -268,46 +268,16 @@ Each time a database and/or binaries are opened in Pamguard Viewer after being c
 
 The clicks, burst pulses, and whistles detected using Pamguard are grouped by event (from the manual annotation) and exported by R package `PAMpal`, then fed into the classification R package `banter` to try to identify which encounters were possibly FKW and which were likely other odontocete species. 
 
-#### Cloning code
-
 Classification code is located in the [llamp](https://github.com/sfregosi/llamp) repository in the [R folder](https://github.com/sfregosi/llamp/tree/main/R). 
 
 Because this code may be regularly updated, it is best to work directly with it using GitHub/GitHub Desktop. If you plan to make modifications to the code (for example, updating paths to a specific machine or workflow) then it is best to make a new **'branch'** on this repository to have your own separate stream of edits. This **'branch'** is an off-shoot of the original so you'll be able to pull in updates committed to the original repo, and you'll be able to make 'pull requests' to contribute any more broad changes to the original. But, with a branch, your changes won't automatically get updated for others and it will avoid conflicts of multiple people working within the code at once. *Creating a branch is only possible if you are a collaborator in the repository; if not, you can 'fork' the repository and still stay up-to-date with changes as well as make pull-requests.*
 
-The classification process also requires some functions located in the [CRPTools](https://github.com/sfregosi/CRPTools) repository. This repository only needs to be cloned to your local machine (first section below) because it will not be modified for a particular computer.
+**The [How-to GitHub](how-to-github.html) page has suggested steps for cloning, creating a new branch, committing, pushing, pulling edits, and merging branches in GitHub.**
 
-Below are suggested steps for cloning, creating a new branch, and working with GitHub/GitHub Desktop.
+The classification process also requires some functions located in the [CRPTools](https://github.com/sfregosi/CRPTools) repository. This repository only needs to be cloned to your local machine ([Clone a repository](how-to-github.html/#clone-a-repository) section of [How-to GitHub](how-to-github.html)) because it will not be modified for a particular computer.
 
-**To clone a repository:**
+<sub>[Back to top](#)</sub>
 
-- Open GitHub Desktop
-- Select *File* > *Clone repository...*
-- Select the *URL* tab and paste `https://github.com/sfregosi/llamp` into the empty URL space 
-- Specify the location to save the repository on your local machine (suggest `documents\github\llamp`) and hit *Clone*
-- This will copy all the `llamp` components to the specified folder 
-- Select this repository within GitHub Desktop from the *Current repository* drop down repository list on the left side
-
-**To create a new branch:**
-
-- The default/primary branch is called `main`. In the *Current branch* drop down, select *New branch* and provide the branch a name (e.g., `fregosi` or `picsn28` - the name of your computer)
-- This will create a new branch and and it's name should now appear in the *Current branch* section in GitHub Desktop 
-- Whenever you want to switch between branches, you select it from this drop down in GitHub Desktop. But, once one branch is selected, it should remain the chosen branch through computer restarts, etc, but it is always good to double check if making major changes! 
-- Finally, hit *Publish this branch* to push this branch to the 'remote' location of this repository on github.com. This will only need to be done once after creating a new branch
-
-**Committing, pushing, and pulling changes:**
-
-- Whenever you make changes to code on your local machine, these changed files will appear in the left side panel of GitHub Desktop. After making a set of specific changes, you can create a *snapshot* of the files at that point in time (so you can go back if something bad happens, or others can easily track what was changed -- the purpose of version control!) by making a **'commit'** for these changes. Do so by typing a short message/description in the lower left and hitting *Commit*
-- After committing changes, those changes have been saved on your local repository and branch, but ONLY locally. After making a commit, or several commits (e.g, at the end of the day), **'push'** these changes to the remote repository on Github.com using the *Push origin* button on the top right of GitHub Desktop
-- The top-right will display different options depending on what changes are available
-  - If there are local changes, it will display *Push origin*; it is good practice to push all commits at the end of each day or session working with a particular code set
-  - If there are no local changes, it will say *Fetch origin*, which will check for new changes from the web
-  - If there are changes present on the remote that are not yet local, it will say *Pull origin*
-  - It is good practice to fetch and pull changes at the start of each day or session to avoid any conflicts of files being changed simultaneously in two locations. If you are working within your own branch, you will be the only one making changes so there won't really be unexpected changes to be pulled from the web. But, if you are working within the same branch as others, or with code that you are not modifying but others are regularly updating, this becomes more critical
-
-**Merging/updating branches**
-
-See this other page: [branch-merge](branch-merge.html)
- 
 #### Running classification
 
 Use the `workflow_fkw_predict_phase3.R` script to process, the manual events, Pamguard detections, and predict species ID with an existing classification model.

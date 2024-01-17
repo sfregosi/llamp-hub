@@ -1,0 +1,36 @@
+---
+title: "Helper Documents"
+description: |
+  Links to several how-to guides with additional detail on some coding, version control, or background processes.
+favicon: docs/images/favicon.ico
+output: 
+  distill::distill_article:
+    self_contained: true
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    css: static/toc-styles.css
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE,}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.align = 'center')
+
+library(fontawesome)
+```
+
+
+
+[**How-to for creating species reference spectra**](create-reference-spectra.html): Protocol/how-to document for making reference spectra of species-specific echolocation clicks
+
+[**How-to for working with GitHub**](how-to-github.html): Guide for cloning an existing GitHub repository and interfacing with GitHub online including creating branches, committing, pushing, and pulling, and merging branches
+
+[**Matlab Guide**](matlab-guide.html): Detailed documentation for various MATLAB scripts and functions used in llamp post-processing and analyses
+
+[**Rmd Help**](rmd-help.html): Placeholder doc with all the useful rmd tidbits used in this site
+
+---
+
+## Last updated {.appendix}
+
+`r fa(name = "calendar-check")` `r format(Sys.Date(), "%d %B %Y")`
