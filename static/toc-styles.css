@@ -13,7 +13,7 @@ d-article {
   /* top: calc(5.5%); */
   /* width: 20%; */
   max-width: 200px;
-  max-height: 85%;
+  max-height: 60%;
   overflow-y: auto;
   background: white;            /* Optional, remove to enable the blur filter (just for fun). */
   backdrop-filter: blur(10px);  /* Optional, wouldn't not work with Firefox browser. */
