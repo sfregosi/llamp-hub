@@ -36,7 +36,7 @@ navbar:
       - text: "Drive links"
         href: drive-links.html
       - text: "Helper docs"
-        menu: helper-docs.html
+        href: helper-docs.html
         # - text: "Matlab code guide"
         #   href: matlab-guide.html
         # - text: "Rmarkdown help"
